@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, scaleIn, viewportConfig } from "@/lib/utils";
+import { fadeInUp, fadeInRight, staggerContainer, viewportConfig } from "@/lib/utils";
 import Button from "@/components/ui/Button";
 import BrowserFrame from "@/components/ui/BrowserFrame";
 import DashboardMockup from "@/components/ui/DashboardMockup";
@@ -14,12 +14,13 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden grid-bg">
       {/* Background glows */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-blue-600/8 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-violet-600/8 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 left-1/4 w-150 h-150 bg-blue-600/8 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-125 h-125 bg-violet-600/8 rounded-full blur-[120px]" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
           {/* Left — copy */}
           <motion.div
             variants={staggerContainer}
@@ -27,18 +28,16 @@ export default function HeroSection() {
             animate="visible"
             className="flex flex-col items-start"
           >
-            {/* Eyebrow */}
             <motion.div variants={fadeInUp} className="mb-6">
               <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 tracking-wider uppercase">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
-                Now accepting projects for 2025
+                Now accepting projects
               </span>
             </motion.div>
 
-            {/* Headline */}
             <motion.h1
               variants={fadeInUp}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-[1.1] tracking-tight mb-6"
             >
               Technology That{" "}
               <span className="gradient-text">Moves Your</span>
@@ -46,34 +45,27 @@ export default function HeroSection() {
               Business Forward
             </motion.h1>
 
-            {/* Subtext */}
             <motion.p
               variants={fadeInUp}
-              className="text-base sm:text-lg text-gray-400 leading-relaxed mb-8 max-w-lg"
+              className="text-base sm:text-lg text-dim leading-relaxed mb-8 max-w-lg"
             >
               Tech & Us builds scalable web and mobile applications, business
               systems, and smart solutions that help companies operate better —
               locally and globally.
             </motion.p>
 
-            {/* Trust signals */}
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mb-8">
               {trust.map((t) => (
-                <div key={t} className="flex items-center gap-1.5 text-sm text-gray-400">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                <div key={t} className="flex items-center gap-1.5 text-sm text-dim">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                   {t}
                 </div>
               ))}
             </motion.div>
 
-            {/* CTAs */}
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
-              <Button href="/contact" size="lg" icon>
-                Start a Project
-              </Button>
-              <Button href="/work" variant="secondary" size="lg">
-                View Our Work
-              </Button>
+              <Button href="/contact" size="lg" icon>Start a Project</Button>
+              <Button href="/work" variant="secondary" size="lg">View Our Work</Button>
             </motion.div>
           </motion.div>
 
@@ -84,8 +76,7 @@ export default function HeroSection() {
             animate="visible"
             className="relative"
           >
-            {/* Glow behind frame */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-violet-600/20 rounded-3xl blur-3xl scale-90" />
+            <div className="absolute inset-0 bg-linear-to-r from-blue-600/20 to-violet-600/20 rounded-3xl blur-3xl scale-90" />
 
             <BrowserFrame className="relative">
               <DashboardMockup />
@@ -102,8 +93,8 @@ export default function HeroSection() {
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
               </div>
               <div>
-                <p className="text-xs font-semibold text-white">System live</p>
-                <p className="text-xs text-gray-500">99.97% uptime</p>
+                <p className="text-xs font-semibold text-ink">System live</p>
+                <p className="text-xs text-ghost">99.97% uptime</p>
               </div>
             </motion.div>
 
@@ -118,22 +109,22 @@ export default function HeroSection() {
                 <ArrowRight className="w-4 h-4 text-blue-400" />
               </div>
               <div>
-                <p className="text-xs font-semibold text-white">Deployed</p>
-                <p className="text-xs text-gray-500">Just now</p>
+                <p className="text-xs font-semibold text-ink">Deployed</p>
+                <p className="text-xs text-ghost">Just now</p>
               </div>
             </motion.div>
           </motion.div>
         </div>
 
-        {/* Bottom scroll indicator */}
+        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 0.6 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
         >
-          <span className="text-xs text-gray-600 tracking-widest uppercase">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-gray-600 to-transparent animate-pulse" />
+          <span className="text-xs text-ghost tracking-widest uppercase">Scroll</span>
+          <div className="w-px h-8 bg-linear-to-b from-ghost to-transparent animate-pulse" />
         </motion.div>
       </div>
     </section>

@@ -1,11 +1,92 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   COLOR TOKENS
+   Mirror of lib/colors.ts — update both files together when changing values.
+   See lib/colors.ts for full documentation of each token.
+──────────────────────────────────────────────────────────────────────────────*/
+
+/* Dark theme (default) */
 :root {
-  --background: #030712;
-  --foreground: #f9fafb;
+  --page:      #030712;
+  --panel:     #0a0f1a;
+  --well:      #0d1117;
+  --well-deep: #161b22;
+
+  --ink:       #f9fafb;
+  --dim:       #9ca3af;
+  --ghost:     #4b5563;
+
+  --surface-1: rgba(255, 255, 255, 0.03);
+  --surface-2: rgba(255, 255, 255, 0.05);
+  --surface-3: rgba(255, 255, 255, 0.08);
+
+  --edge:      rgba(255, 255, 255, 0.07);
+  --edge-2:    rgba(255, 255, 255, 0.13);
+
+  --glass-bg:          rgba(255, 255, 255, 0.03);
+  --glass-bg-hover:    rgba(255, 255, 255, 0.06);
+  --glass-hover-ring:  rgba(99, 102, 241, 0.30);
+
+  --grid-line: rgba(59, 130, 246, 0.04);
+  --scrollbar-thumb: rgba(59, 130, 246, 0.25);
+  --scrollbar-thumb-hover: rgba(59, 130, 246, 0.45);
 }
 
-* {
+/* Light theme */
+[data-theme="light"] {
+  --page:      #f8fafc;
+  --panel:     #ffffff;
+  --well:      #f1f5f9;
+  --well-deep: #e2e8f0;
+
+  --ink:       #0f172a;
+  --dim:       #475569;
+  --ghost:     #94a3b8;
+
+  --surface-1: rgba(0, 0, 0, 0.02);
+  --surface-2: rgba(0, 0, 0, 0.04);
+  --surface-3: rgba(0, 0, 0, 0.07);
+
+  --edge:      rgba(0, 0, 0, 0.08);
+  --edge-2:    rgba(0, 0, 0, 0.14);
+
+  --glass-bg:          rgba(255, 255, 255, 0.70);
+  --glass-bg-hover:    rgba(255, 255, 255, 0.95);
+  --glass-hover-ring:  rgba(99, 102, 241, 0.20);
+
+  --grid-line: rgba(59, 130, 246, 0.06);
+  --scrollbar-thumb: rgba(99, 102, 241, 0.25);
+  --scrollbar-thumb-hover: rgba(99, 102, 241, 0.45);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   TAILWIND v4 THEME MAPPING
+   Exposes CSS variables as Tailwind utility classes.
+   e.g. `bg-page`, `text-ink`, `border-edge`, `bg-surface-1`
+──────────────────────────────────────────────────────────────────────────────*/
+@theme inline {
+  --color-page:      var(--page);
+  --color-panel:     var(--panel);
+  --color-well:      var(--well);
+  --color-well-deep: var(--well-deep);
+
+  --color-ink:       var(--ink);
+  --color-dim:       var(--dim);
+  --color-ghost:     var(--ghost);
+
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+
+  --color-edge:      var(--edge);
+  --color-edge-2:    var(--edge-2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BASE STYLES
+──────────────────────────────────────────────────────────────────────────────*/
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -14,14 +95,20 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--page);
+  color: var(--ink);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   UTILITY CLASSES
+──────────────────────────────────────────────────────────────────────────────*/
+
+/* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 60%, #f472b6 100%);
   -webkit-background-clip: text;
@@ -36,46 +123,62 @@ body {
   background-clip: text;
 }
 
+/* Grid background */
 .grid-bg {
   background-image:
-    linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
+/* Glass cards */
 .glass-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid var(--edge);
+}
+
+[data-theme="light"] .glass-card {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
 }
 
 .glass-card-hover {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: var(--glass-bg);
+  border: 1px solid var(--edge);
   transition: all 0.3s ease;
 }
 
 .glass-card-hover:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(99, 102, 241, 0.3);
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-hover-ring);
   box-shadow: 0 0 40px rgba(99, 102, 241, 0.08);
 }
 
-::-webkit-scrollbar {
-  width: 5px;
+[data-theme="light"] .glass-card-hover {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
-::-webkit-scrollbar-track {
-  background: #030712;
+
+[data-theme="light"] .glass-card-hover:hover {
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.12), 0 1px 3px rgba(0,0,0,0.06);
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SCROLLBAR
+──────────────────────────────────────────────────────────────────────────────*/
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--page); }
 ::-webkit-scrollbar-thumb {
-  background: rgba(59, 130, 246, 0.25);
+  background: var(--scrollbar-thumb);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(59, 130, 246, 0.45);
+  background: var(--scrollbar-thumb-hover);
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   SELECTION
+──────────────────────────────────────────────────────────────────────────────*/
 ::selection {
-  background: rgba(59, 130, 246, 0.3);
-  color: #f9fafb;
+  background: rgba(59, 130, 246, 0.25);
+  color: var(--ink);
 }

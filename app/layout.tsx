@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,20 +37,12 @@ export const metadata: Metadata = {
     title: "Tech & Us — Technology That Moves Your Business Forward",
     description:
       "Scalable web and mobile applications, business systems, and smart solutions for companies operating locally and globally.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Tech & Us",
-      },
-    ],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Tech & Us" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Tech & Us — Technology That Moves Your Business Forward",
-    description:
-      "Scalable web and mobile applications, business systems, and smart solutions.",
+    description: "Scalable web and mobile applications, business systems, and smart solutions.",
     images: ["/og-image.png"],
   },
   robots: {
@@ -67,15 +60,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-[#030712] text-gray-100 antialiased">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      {/*
+        suppressHydrationWarning: ThemeProvider sets data-theme on <html>
+        client-side; this prevents the hydration mismatch warning.
+      */}
+      <body className="min-h-screen flex flex-col antialiased">
+        <ThemeProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

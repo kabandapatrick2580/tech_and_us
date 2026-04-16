@@ -2,27 +2,27 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 type Variant = "primary" | "secondary" | "ghost";
-type Size = "sm" | "md" | "lg";
+type Size    = "sm" | "md" | "lg";
 
 interface ButtonProps {
-  children: React.ReactNode;
-  href?: string;
-  onClick?: () => void;
-  variant?: Variant;
-  size?: Size;
-  icon?: boolean;
+  children:  React.ReactNode;
+  href?:     string;
+  onClick?:  () => void;
+  variant?:  Variant;
+  size?:     Size;
+  icon?:     boolean;
   className?: string;
-  type?: "button" | "submit" | "reset";
+  type?:     "button" | "submit" | "reset";
   disabled?: boolean;
 }
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-gradient-to-r from-blue-500 to-violet-600 text-white hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5",
+    "bg-linear-to-r from-blue-500 to-violet-600 text-white hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5",
   secondary:
-    "bg-white/[0.06] text-white border border-white/[0.1] hover:bg-white/[0.1] hover:border-white/[0.2] hover:-translate-y-0.5",
+    "bg-surface-1 text-ink border border-edge-2 hover:bg-surface-2 hover:border-edge-2 hover:-translate-y-0.5",
   ghost:
-    "text-gray-300 hover:text-white hover:bg-white/[0.06]",
+    "text-dim hover:text-ink hover:bg-surface-1",
 };
 
 const sizes: Record<Size, string> = {
@@ -35,11 +35,11 @@ export default function Button({
   children,
   href,
   onClick,
-  variant = "primary",
-  size = "md",
-  icon = false,
+  variant  = "primary",
+  size     = "md",
+  icon     = false,
   className = "",
-  type = "button",
+  type     = "button",
   disabled = false,
 }: ButtonProps) {
   const base = `inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 ${variants[variant]} ${sizes[size]} ${className}`;
@@ -51,13 +51,7 @@ export default function Button({
     </>
   );
 
-  if (href) {
-    return (
-      <Link href={href} className={base}>
-        {content}
-      </Link>
-    );
-  }
+  if (href) return <Link href={href} className={base}>{content}</Link>;
 
   return (
     <button type={type} onClick={onClick} disabled={disabled} className={base}>
