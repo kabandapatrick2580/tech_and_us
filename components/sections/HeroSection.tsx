@@ -7,6 +7,7 @@ import BrowserFrame from "@/components/ui/BrowserFrame";
 import DashboardMockup from "@/components/ui/DashboardMockup";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import ImicongoHeroAccent from "@/components/ui/ImicongoHeroAccent";
+import { PiChartLineUp } from "react-icons/pi";
 
 const trust = ["No lock-in contracts", "Rwanda-based team", "Global delivery"];
 
@@ -42,10 +43,11 @@ export default function HeroSection() {
               variants={fadeInUp}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-[1.1] tracking-tight mb-6"
             >
-              Technology That{" "}
-              <span className="gradient-text">Moves Your</span>
+              Driving Digital{" "}
+              <span className="gradient-text">Growth</span>
+              <PiChartLineUp className="inline align-[-0.1em] ml-2 w-[0.85em] h-[0.85em] text-blue-400 opacity-80" />
               <br />
-              Business Forward
+              For Your Business
             </motion.h1>
 
             <motion.p
@@ -81,9 +83,12 @@ export default function HeroSection() {
           >
             <div className="absolute inset-0 bg-linear-to-r from-blue-600/20 to-violet-600/20 rounded-3xl blur-3xl scale-90" />
 
-            <BrowserFrame className="relative">
-              <DashboardMockup />
-            </BrowserFrame>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/hero.png"
+                alt="Tech & Us — scalable web and mobile solutions"
+                className="relative w-full h-auto rounded-xl shadow-2xl"
+              />
 
             {/* Floating badge — bottom left */}
             <motion.div

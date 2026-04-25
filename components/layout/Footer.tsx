@@ -17,7 +17,19 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-edge bg-page">
+    <>
+      <div
+        aria-hidden="true"
+        role="presentation"
+        className="w-full h-10 md:h-14 imigongo-divider-blue"
+        style={{
+          backgroundImage: "url('/imigongo_1920.svg')",
+          backgroundSize: "100% 100%",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      />
+      <footer className="relative border-t border-edge bg-page">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-px bg-linear-to-r from-transparent via-blue-500/30 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
@@ -86,5 +98,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }
