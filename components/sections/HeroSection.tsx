@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 import BrowserFrame from "@/components/ui/BrowserFrame";
 import DashboardMockup from "@/components/ui/DashboardMockup";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import ImicongoHeroAccent from "@/components/ui/ImicongoHeroAccent";
 
 const trust = ["No lock-in contracts", "Rwanda-based team", "Global delivery"];
 
@@ -17,6 +18,8 @@ export default function HeroSection() {
         <div className="absolute top-1/4 left-1/4 w-150 h-150 bg-blue-600/8 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-125 h-125 bg-violet-600/8 rounded-full blur-[120px]" />
       </div>
+
+      <ImicongoHeroAccent />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, viewportConfig } from "@/lib/utils";
 import CtaSection from "@/components/sections/CtaSection";
+import ImicongoHeroAccent from "@/components/ui/ImicongoHeroAccent";
 import {
   Users, Plug, LayoutDashboard, TrendingUp, CheckCircle2,
   Clock, Shield, Sparkles, Globe, RefreshCw, Wallet, ArrowRight,
@@ -158,6 +159,7 @@ export default function WorkPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-150 h-100 bg-violet-600/5 rounded-full blur-[120px]" />
         </div>
+        <ImicongoHeroAccent />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-3xl">
             <motion.span variants={fadeInUp} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-violet-500/10 text-violet-400 border border-violet-500/20 tracking-wide uppercase mb-5">

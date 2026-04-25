@@ -5,6 +5,7 @@ import { fadeInUp, staggerContainer, viewportConfig } from "@/lib/utils";
 import Button from "@/components/ui/Button";
 import CtaSection from "@/components/sections/CtaSection";
 import { Monitor, Smartphone, Plug, Building2, Brain, CheckCircle2, ArrowRight } from "lucide-react";
+import ImicongoHeroAccent from "@/components/ui/ImicongoHeroAccent";
 
 const services = [
   {
@@ -57,6 +58,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/3 right-1/3 w-125 h-125 bg-violet-600/6 rounded-full blur-[120px]" />
         </div>
+        <ImicongoHeroAccent />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-3xl">
             <motion.span variants={fadeInUp} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-violet-500/10 text-violet-400 border border-violet-500/20 tracking-wide uppercase mb-5">

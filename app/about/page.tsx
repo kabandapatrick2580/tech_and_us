@@ -6,6 +6,7 @@ import Button from "@/components/ui/Button";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CtaSection from "@/components/sections/CtaSection";
 import { Target, Cpu, Users, Heart, CheckCircle2 } from "lucide-react";
+import ImicongoHeroAccent from "@/components/ui/ImicongoHeroAccent";
 
 const values = [
   { icon: Target, title: "Clarity First",        color: "text-blue-400",   bg: "bg-blue-400/10",   description: "We don't overcomplicate things. Clear requirements, clear architecture, clear communication — all the way to delivery." },
@@ -36,6 +37,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/3 left-1/3 w-125 h-125 bg-blue-600/6 rounded-full blur-[120px]" />
         </div>
+        <ImicongoHeroAccent />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="max-w-3xl">
             <motion.span variants={fadeInUp} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 tracking-wide uppercase mb-5">

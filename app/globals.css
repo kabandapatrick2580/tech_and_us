@@ -176,6 +176,45 @@ body {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   IMIGONGO — DIVIDERS & OVERLAYS
+   Filter approach: background-image loads the SVG; CSS filter handles color.
+   invert(1) turns the dark (#111) paths to near-white, then sepia+saturate+
+   hue-rotate shifts to the desired brand hue.
+──────────────────────────────────────────────────────────────────────────────*/
+
+/* Divider (horizontal strip — imigongo_1920.svg, 1920×80) */
+.imigongo-divider {
+  background-image: url('/imigongo_1920.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* dark theme */
+.imigongo-divider-ghost  { filter: invert(1) opacity(0.20); }
+.imigongo-divider-blue   { filter: invert(1) sepia(1) saturate(6) hue-rotate(183deg) opacity(0.32); }
+.imigongo-divider-violet { filter: invert(1) sepia(1) saturate(5) hue-rotate(228deg) opacity(0.28); }
+/* light theme */
+[data-theme="light"] .imigongo-divider-ghost  { filter: opacity(0.16); }
+[data-theme="light"] .imigongo-divider-blue   { filter: sepia(1) saturate(6) hue-rotate(183deg) opacity(0.22); }
+[data-theme="light"] .imigongo-divider-violet { filter: sepia(1) saturate(5) hue-rotate(228deg) opacity(0.18); }
+
+/* Overlay (full-section texture — Imigongo_larger.svg, 1280×1024) */
+.imigongo-overlay {
+  background-image: url('/Imigongo_larger.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* dark theme */
+.imigongo-overlay-ghost  { filter: invert(1) opacity(0.04); }
+.imigongo-overlay-blue   { filter: invert(1) sepia(1) saturate(6) hue-rotate(183deg) opacity(0.08); }
+.imigongo-overlay-violet { filter: invert(1) sepia(1) saturate(5) hue-rotate(228deg) opacity(0.06); }
+/* light theme */
+[data-theme="light"] .imigongo-overlay-ghost  { filter: opacity(0.05); }
+[data-theme="light"] .imigongo-overlay-blue   { filter: sepia(1) saturate(6) hue-rotate(183deg) opacity(0.06); }
+[data-theme="light"] .imigongo-overlay-violet { filter: sepia(1) saturate(5) hue-rotate(228deg) opacity(0.05); }
+
+/* ─────────────────────────────────────────────────────────────────────────────
    SELECTION
 ──────────────────────────────────────────────────────────────────────────────*/
 ::selection {

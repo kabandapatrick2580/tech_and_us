@@ -77,9 +77,9 @@ export default function ProcessSection() {
                   <h3 className="text-base font-semibold text-ink">{step.title}</h3>
                 </div>
 
-                <div className="glass-card-hover rounded-2xl p-5 flex-1">
+                <div className="glass-card-hover rounded-2xl flex-1 p-5 flex flex-col">
                   <p className="text-sm text-dim leading-relaxed mb-4">{step.description}</p>
-                  <div className="border-t border-edge pt-3">
+                  <div className="border-t border-edge pt-3 mt-auto">
                     <p className="text-xs text-ghost font-mono">{step.detail}</p>
                   </div>
                 </div>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, viewportConfig } from "@/lib/utils";
 import { Mail, MapPin, Clock, Send, CheckCircle2, ArrowRight } from "lucide-react";
+import ImicongoHeroAccent from "@/components/ui/ImicongoHeroAccent";
 
 const contactInfo = [
   {
@@ -73,6 +74,7 @@ export default function ContactPage() {
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-100 bg-blue-600/6 rounded-full blur-[120px]" />
         </div>
+        <ImicongoHeroAccent />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             variants={staggerContainer}
