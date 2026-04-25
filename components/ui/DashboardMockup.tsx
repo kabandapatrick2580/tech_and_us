@@ -58,8 +58,8 @@ export default function DashboardMockup() {
                 style={{
                   height: `${h}%`,
                   background: i === bars.length - 1
-                    ? "linear-gradient(to top, #3b82f6, #8b5cf6)"
-                    : "rgba(59,130,246,0.2)",
+                    ? "linear-gradient(to top, var(--brand-500), var(--accent-500))"
+                    : "color-mix(in srgb, var(--brand-500) 20%, transparent)",
                 }}
               />
             </div>

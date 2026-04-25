@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 
 const navLinks = [
@@ -50,13 +50,13 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-[70px]">
 
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2.5 group">
-              <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-violet-600 flex items-center justify-center shadow-lg group-hover:shadow-blue-500/30 transition-shadow duration-300">
-                <Zap className="w-4 h-4 text-white fill-white" />
-              </div>
-              <span className="text-ink font-semibold text-lg tracking-tight">
-                Tech<span className="text-blue-400">&</span>Us
-              </span>
+            <Link href="/">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo_icon.png"
+                alt="Tech & Us"
+                className="h-10 w-auto"
+              />
             </Link>
 
             {/* Desktop nav */}

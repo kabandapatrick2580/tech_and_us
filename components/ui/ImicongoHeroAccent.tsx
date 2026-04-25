@@ -14,8 +14,8 @@ export default function ImicongoHeroAccent() {
         backgroundSize: "cover",
         backgroundPosition: "top right",
         filter: isDark
-          ? "invert(1) sepia(1) saturate(8) hue-rotate(228deg) opacity(0.13)"
-          : "sepia(1) saturate(8) hue-rotate(228deg) opacity(0.09)",
+          ? "invert(1) sepia(1) saturate(8) hue-rotate(var(--accent-hue)) opacity(0.13)"
+          : "sepia(1) saturate(8) hue-rotate(var(--accent-hue)) opacity(0.09)",
       }}
     />
   );

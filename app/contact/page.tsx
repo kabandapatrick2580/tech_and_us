@@ -125,7 +125,7 @@ export default function ContactPage() {
                   </div>
                   <button
                     onClick={() => { setSubmitted(false); setFormState({ name: "", email: "", company: "", projectType: "", message: "" }); }}
-                    className="text-sm text-blue-400 hover:text-blue-300 flex items-center gap-1.5 transition-colors"
+                    className="text-sm text-blue-400 hover:opacity-80 flex items-center gap-1.5 transition-opacity"
                   >
                     Send another message <ArrowRight className="w-3.5 h-3.5" />
                   </button>

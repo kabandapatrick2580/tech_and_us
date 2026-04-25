@@ -8,6 +8,21 @@
 
 /* Dark theme (default) */
 :root {
+  /* ── BRAND ACCENT COLORS ─────────────────────────────────────────────────
+     To retheme the site, change the six hex values and the two hue angles.
+     See lib/colors.ts for full documentation and reference values.
+  ────────────────────────────────────────────────────────────────────────── */
+  --brand:        #423a2c;   /* primary text/icon accent  — dark warm brown  */
+  --brand-500:    #978565;   /* primary bg/border         — mid tan-brown    */
+  --brand-600:    #3f372a;   /* primary glow              — deep warm brown  */
+  --brand-hue:    0deg;      /* Imigongo SVG tint — sepia≈0°(gold), orange≈20°, blue≈190° */
+
+  --accent:       #e0c288;   /* secondary text/icon accent — warm amber-gold */
+  --accent-500:   #7d6549;   /* secondary bg/border        — warm mid-brown  */
+  --accent-600:   #3f372a;   /* secondary glow             — same deep brown */
+  --accent-hue:   20deg;     /* Imigongo SVG tint — slight orange-amber shift */
+
+  /* ── Page structure ──────────────────────────────────────────────────── */
   --page:      #030712;
   --panel:     #0a0f1a;
   --well:      #0d1117;
@@ -26,11 +41,11 @@
 
   --glass-bg:          rgba(255, 255, 255, 0.03);
   --glass-bg-hover:    rgba(255, 255, 255, 0.06);
-  --glass-hover-ring:  rgba(99, 102, 241, 0.30);
+  --glass-hover-ring:  rgba(139, 92, 246, 0.30);   /* follows --accent-500 */
 
-  --grid-line: rgba(59, 130, 246, 0.04);
-  --scrollbar-thumb: rgba(59, 130, 246, 0.25);
-  --scrollbar-thumb-hover: rgba(59, 130, 246, 0.45);
+  --grid-line:              rgba(59, 130, 246, 0.04);
+  --scrollbar-thumb:        rgba(59, 130, 246, 0.25);
+  --scrollbar-thumb-hover:  rgba(59, 130, 246, 0.45);
 }
 
 /* Light theme */
@@ -66,6 +81,7 @@
    e.g. `bg-page`, `text-ink`, `border-edge`, `bg-surface-1`
 ──────────────────────────────────────────────────────────────────────────────*/
 @theme inline {
+  /* ── Structural tokens ───────────────────────────────────────────────── */
   --color-page:      var(--page);
   --color-panel:     var(--panel);
   --color-well:      var(--well);
@@ -81,6 +97,31 @@
 
   --color-edge:      var(--edge);
   --color-edge-2:    var(--edge-2);
+
+  /* ── Brand aliases (semantic names) ─────────────────────────────────── */
+  --color-brand:        var(--brand);
+  --color-brand-500:    var(--brand-500);
+  --color-brand-600:    var(--brand-600);
+  --color-accent:       var(--accent);
+  --color-accent-500:   var(--accent-500);
+  --color-accent-600:   var(--accent-600);
+
+  /* ── Tailwind palette override ───────────────────────────────────────
+     Remaps the built-in blue/violet classes to the brand variables.
+     This means text-blue-400, bg-blue-500/10, border-violet-400, etc.
+     all resolve through --brand / --accent automatically.
+     Change the brand variables above — everything updates with no
+     component edits required.
+  ────────────────────────────────────────────────────────────────────── */
+  --color-blue-300:    color-mix(in oklch, var(--brand) 70%, white);
+  --color-blue-400:    var(--brand);
+  --color-blue-500:    var(--brand-500);
+  --color-blue-600:    var(--brand-600);
+
+  --color-violet-300:  color-mix(in oklch, var(--accent) 70%, white);
+  --color-violet-400:  var(--accent);
+  --color-violet-500:  var(--accent-500);
+  --color-violet-600:  var(--accent-600);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -110,14 +151,14 @@ body {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 60%, #f472b6 100%);
+  background: linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-blue {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, var(--brand-500) 0%, var(--accent-500) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -191,12 +232,12 @@ body {
 }
 /* dark theme */
 .imigongo-divider-ghost  { filter: invert(1) opacity(0.20); }
-.imigongo-divider-blue   { filter: invert(1) sepia(1) saturate(6) hue-rotate(183deg) opacity(0.32); }
-.imigongo-divider-violet { filter: invert(1) sepia(1) saturate(5) hue-rotate(228deg) opacity(0.28); }
+.imigongo-divider-blue   { filter: invert(1) sepia(1) saturate(6) hue-rotate(var(--brand-hue)) opacity(0.32); }
+.imigongo-divider-violet { filter: invert(1) sepia(1) saturate(5) hue-rotate(var(--accent-hue)) opacity(0.28); }
 /* light theme */
 [data-theme="light"] .imigongo-divider-ghost  { filter: opacity(0.16); }
-[data-theme="light"] .imigongo-divider-blue   { filter: sepia(1) saturate(6) hue-rotate(183deg) opacity(0.22); }
-[data-theme="light"] .imigongo-divider-violet { filter: sepia(1) saturate(5) hue-rotate(228deg) opacity(0.18); }
+[data-theme="light"] .imigongo-divider-blue   { filter: sepia(1) saturate(6) hue-rotate(var(--brand-hue)) opacity(0.22); }
+[data-theme="light"] .imigongo-divider-violet { filter: sepia(1) saturate(5) hue-rotate(var(--accent-hue)) opacity(0.18); }
 
 /* Overlay (full-section texture — Imigongo_larger.svg, 1280×1024) */
 .imigongo-overlay {
@@ -207,12 +248,12 @@ body {
 }
 /* dark theme */
 .imigongo-overlay-ghost  { filter: invert(1) opacity(0.04); }
-.imigongo-overlay-blue   { filter: invert(1) sepia(1) saturate(6) hue-rotate(183deg) opacity(0.08); }
-.imigongo-overlay-violet { filter: invert(1) sepia(1) saturate(5) hue-rotate(228deg) opacity(0.06); }
+.imigongo-overlay-blue   { filter: invert(1) sepia(1) saturate(6) hue-rotate(var(--brand-hue)) opacity(0.08); }
+.imigongo-overlay-violet { filter: invert(1) sepia(1) saturate(5) hue-rotate(var(--accent-hue)) opacity(0.06); }
 /* light theme */
 [data-theme="light"] .imigongo-overlay-ghost  { filter: opacity(0.05); }
-[data-theme="light"] .imigongo-overlay-blue   { filter: sepia(1) saturate(6) hue-rotate(183deg) opacity(0.06); }
-[data-theme="light"] .imigongo-overlay-violet { filter: sepia(1) saturate(5) hue-rotate(228deg) opacity(0.05); }
+[data-theme="light"] .imigongo-overlay-blue   { filter: sepia(1) saturate(6) hue-rotate(var(--brand-hue)) opacity(0.06); }
+[data-theme="light"] .imigongo-overlay-violet { filter: sepia(1) saturate(5) hue-rotate(var(--accent-hue)) opacity(0.05); }
 
 /* ─────────────────────────────────────────────────────────────────────────────
    SELECTION

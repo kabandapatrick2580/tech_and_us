@@ -54,9 +54,9 @@ export default function HeroSection() {
               variants={fadeInUp}
               className="text-base sm:text-lg text-dim leading-relaxed mb-8 max-w-lg"
             >
-              Tech & Us builds scalable web and mobile applications, business
-              systems, and smart solutions that help companies operate better —
-              locally and globally.
+              Custom websites, mobile apps, and payment integrations — backed
+              by hands-on IT support. One team that builds your technology
+              and keeps it running.
             </motion.p>
 
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mb-8">
@@ -85,7 +85,7 @@ export default function HeroSection() {
 
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/hero.png"
+                src="/hero_2.png"
                 alt="Tech & Us — scalable web and mobile solutions"
                 className="relative w-full h-auto rounded-xl shadow-2xl"
               />
