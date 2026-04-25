@@ -50,13 +50,16 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 lg:h-[70px]">
 
             {/* Logo */}
-            <Link href="/">
+            <Link href="/" className="flex items-center gap-2.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo_icon.png"
-                alt="Tech & Us"
+                alt="Tech & Us logo"
                 className="h-10 w-auto"
               />
+              <span className="text-ink font-semibold text-lg tracking-tight">
+                Tech<span className="text-blue-400">&</span>Us
+              </span>
             </Link>
 
             {/* Desktop nav */}

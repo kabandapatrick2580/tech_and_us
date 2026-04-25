@@ -37,11 +37,14 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-2.5 mb-5">
-              <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-violet-600 flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white fill-white" />
-              </div>
-              <span className="text-ink font-semibold text-lg">
+            <Link href="/" className="flex items-center gap-2.5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo_icon.png"
+                alt="Tech & Us logo"
+                className="h-10 w-auto"
+              />
+              <span className="text-ink font-semibold text-lg tracking-tight">
                 Tech<span className="text-blue-400">&</span>Us
               </span>
             </Link>
