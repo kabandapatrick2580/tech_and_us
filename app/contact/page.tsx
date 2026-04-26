@@ -61,6 +61,7 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -71,9 +72,26 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    await new Promise((res) => setTimeout(res, 1200));
-    setSubmitting(false);
-    setSubmitted(true);
+    setError(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+
+      if (!res.ok) {
+        const data = await res.json() as { error?: string };
+        setError(data.error ?? "Something went wrong. Please try again.");
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setError("Network error. Check your connection and try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -214,6 +232,13 @@ export default function ContactPage() {
                       className="w-full bg-surface-1 border border-edge rounded-xl px-4 py-3 text-sm text-ink placeholder-ghost focus:border-blue-500/50 focus:bg-surface-2 transition-all duration-200 resize-none"
                     />
                   </div>
+
+                  {/* Error message */}
+                  {error && (
+                    <p className="text-xs text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl px-4 py-3">
+                      {error}
+                    </p>
+                  )}
 
                   {/* Submit */}
                   <button
