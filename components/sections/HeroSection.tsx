@@ -7,6 +7,7 @@ import BrowserFrame from "@/components/ui/BrowserFrame";
 import DashboardMockup from "@/components/ui/DashboardMockup";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import ImicongoHeroAccent from "@/components/ui/ImicongoHeroAccent";
+import EcgPulse from "@/components/ui/EcgPulse";
 
 
 const trust = ["No lock-in contracts", "Rwanda-based team", "Global delivery"];
@@ -21,6 +22,7 @@ export default function HeroSection() {
       </div>
 
       <ImicongoHeroAccent />
+      <EcgPulse />
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">

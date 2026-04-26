@@ -256,6 +256,14 @@ body {
 [data-theme="light"] .imigongo-overlay-violet { filter: sepia(1) saturate(5) hue-rotate(var(--accent-hue)) opacity(0.05); }
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   PULSE SIGNALS — full-screen decorative signal lines
+──────────────────────────────────────────────────────────────────────────────*/
+@keyframes signal-travel {
+  from { transform: translateX(-220px); }
+  to   { transform: translateX(calc(100vw + 220px)); }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
    MARQUEE — used by TestimonialsSection
 ──────────────────────────────────────────────────────────────────────────────*/
 @keyframes marquee-left {
