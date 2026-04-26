@@ -5,10 +5,10 @@ import { staggerContainer, fadeInUp, viewportConfig } from "@/lib/utils";
 import { Code2, Layers, Cpu, Globe } from "lucide-react";
 
 const stats = [
-  { value: "50+", label: "Projects Delivered",    icon: Layers, color: "text-blue-400",   bg: "bg-blue-400/10"   },
-  { value: "3+",  label: "Years Experience",      icon: Code2,  color: "text-violet-400", bg: "bg-violet-400/10" },
-  { value: "99%", label: "Client Satisfaction",   icon: Globe,  color: "text-emerald-400",bg: "bg-emerald-400/10"},
-  { value: "10+", label: "Tech Stacks Mastered",  icon: Cpu,    color: "text-amber-400",  bg: "bg-amber-400/10"  },
+  { value: "20+", label: "Projects Delivered",   icon: Layers, color: "text-blue-400",    bg: "bg-blue-400/10"   },
+  { value: "5",   label: "Years in Business",    icon: Code2,  color: "text-violet-400",  bg: "bg-violet-400/10" },
+  { value: "3+",  label: "Countries Served",     icon: Globe,  color: "text-emerald-400", bg: "bg-emerald-400/10"},
+  { value: "10+", label: "Tech Stacks Mastered", icon: Cpu,    color: "text-amber-400",   bg: "bg-amber-400/10"  },
 ];
 
 export default function TrustSection() {

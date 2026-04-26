@@ -256,6 +256,27 @@ body {
 [data-theme="light"] .imigongo-overlay-violet { filter: sepia(1) saturate(5) hue-rotate(var(--accent-hue)) opacity(0.05); }
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   MARQUEE — used by TestimonialsSection
+──────────────────────────────────────────────────────────────────────────────*/
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.marquee-left  { animation: marquee-left  40s linear infinite; }
+.marquee-right { animation: marquee-right 40s linear infinite; }
+
+.marquee-wrapper:hover .marquee-left,
+.marquee-wrapper:hover .marquee-right {
+  animation-play-state: paused;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
    SELECTION
 ──────────────────────────────────────────────────────────────────────────────*/
 ::selection {

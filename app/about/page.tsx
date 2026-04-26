@@ -5,8 +5,9 @@ import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, viewportConfig } f
 import Button from "@/components/ui/Button";
 import SectionHeader from "@/components/ui/SectionHeader";
 import CtaSection from "@/components/sections/CtaSection";
-import { Target, Cpu, Users, Heart, CheckCircle2 } from "lucide-react";
+import { Target, Cpu, Users, Heart, CheckCircle2, CreditCard, LayoutDashboard, PlugZap, Server } from "lucide-react";
 import ImicongoHeroAccent from "@/components/ui/ImicongoHeroAccent";
+import TeamSection from "@/components/sections/TeamSection";
 
 const values = [
   { icon: Target, title: "Clarity First",        color: "text-blue-400",   bg: "bg-blue-400/10",   description: "We don't overcomplicate things. Clear requirements, clear architecture, clear communication — all the way to delivery." },
@@ -22,11 +23,43 @@ const stack = [
   { category: "Infrastructure",  items: ["AWS", "Vercel", "Docker", "CI/CD"] },
 ];
 
-const timeline = [
-  { year: "2021", title: "Founded in Kigali",       desc: "Started as a small team solving real problems for local businesses — HR systems, payment tools, internal dashboards." },
-  { year: "2022", title: "First International Work", desc: "Expanded beyond Rwanda. Took on API integration and SaaS projects for clients in Europe and the US." },
-  { year: "2023", title: "AI & Automation Work",     desc: "Started integrating AI into client products — smart search, document automation, intelligent reporting." },
-  { year: "2024+", title: "Full Product Teams",      desc: "Now operating as full embedded product teams — design, development, and strategy under one roof." },
+const specialisations = [
+  {
+    icon: CreditCard,
+    title: "Payments & Fintech",
+    desc: "Payment gateway integrations, invoice workflows, webhook handling. We've worked with UrubutoPay, IremboPay, QuickBooks, and custom accounting pipelines.",
+    iconColor:  "text-blue-400",
+    iconBg:     "bg-blue-400/10",
+    glowClass:  "from-blue-500/8 to-blue-600/5",
+    borderHover:"hover:border-blue-500/30",
+  },
+  {
+    icon: LayoutDashboard,
+    title: "Business Operations Tools",
+    desc: "Admin dashboards, approval workflows, internal automation. We turn manual, error-prone processes into software that runs itself.",
+    iconColor:  "text-violet-400",
+    iconBg:     "bg-violet-400/10",
+    glowClass:  "from-violet-500/8 to-violet-600/5",
+    borderHover:"hover:border-violet-500/30",
+  },
+  {
+    icon: PlugZap,
+    title: "API Integrations",
+    desc: "Connecting your stack to third-party services — reliably. Data sync, USSD flows, webhook infrastructure, and clean API design.",
+    iconColor:  "text-emerald-400",
+    iconBg:     "bg-emerald-400/10",
+    glowClass:  "from-emerald-500/8 to-emerald-600/5",
+    borderHover:"hover:border-emerald-500/30",
+  },
+  {
+    icon: Server,
+    title: "Backend & Infrastructure",
+    desc: "Production-hardened systems built on PostgreSQL, Docker, and Linux. We care about uptime, not just shipping — 99.9% is the standard we hold ourselves to.",
+    iconColor:  "text-amber-400",
+    iconBg:     "bg-amber-400/10",
+    glowClass:  "from-amber-500/8 to-amber-600/5",
+    borderHover:"hover:border-amber-500/30",
+  },
 ];
 
 export default function AboutPage() {
@@ -48,7 +81,7 @@ export default function AboutPage() {
               <span className="gradient-text">things that work</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-dim leading-relaxed mb-8 max-w-2xl">
-              Tech & Us started with a simple frustration: too many businesses running on broken, disconnected, or nonexistent software. We set out to fix that — one well-built system at a time.
+              Tech & Us is a software and systems company based in Kigali, Rwanda. We build payment integrations, operational tools, and backend infrastructure for fintech, SaaS, and operations-heavy businesses — locally and internationally.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
               <Button href="/work" icon>See Our Work</Button>
@@ -64,31 +97,38 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <motion.div variants={fadeInLeft} initial="hidden" whileInView="visible" viewport={viewportConfig}>
               <h2 className="text-2xl sm:text-3xl font-bold text-ink mb-6 leading-tight">
-                We build systems, not just software
+                Built for businesses with real operational complexity
               </h2>
               <div className="space-y-4 text-dim text-base leading-relaxed">
-                <p>Most development teams write code. We engineer systems. The difference matters when you&apos;re three years in and trying to scale — or when something breaks on a Friday evening.</p>
-                <p>We started Tech & Us because we kept seeing the same patterns: businesses paying for tools that didn&apos;t fit, systems that couldn&apos;t grow, and developers who were good at writing code but not at understanding business operations.</p>
-                <p>Our background spans real business problems — HR software, payroll systems, API integrations, government tools, and operational dashboards. We&apos;ve seen what breaks and why. We build to avoid those failure points.</p>
-                <p>That&apos;s not a sales pitch. It&apos;s the reason every project we take on starts with a deep conversation about how your business actually works — before we touch a keyboard.</p>
+                <p>Tech & Us specialises in the parts of software most agencies avoid — payment systems, accounting integrations, internal operations tools, and backend infrastructure that has to perform when the business depends on it.</p>
+                <p>Our work spans fintech platforms, SaaS products, and operations-heavy businesses across Rwanda and internationally. Delivered projects include payment pipelines processing over 50,000 transactions, integrations with QuickBooks and local payment providers, and internal systems that replaced manual workflows entirely.</p>
+                <p>We engage directly with founders, operations leads, and technical teams — without project management layers that slow things down. Every engagement begins with a thorough understanding of how the business actually runs before any architecture is proposed.</p>
+                <p>The standard we hold ourselves to: systems that are maintainable, properly documented, and built to scale with the business — not just to clear a deadline.</p>
               </div>
             </motion.div>
 
-            <motion.div variants={fadeInRight} initial="hidden" whileInView="visible" viewport={viewportConfig} className="space-y-4">
-              {timeline.map((item, i) => (
-                <div key={item.year} className="relative pl-14">
-                  {i < timeline.length - 1 && (
-                    <div className="absolute left-5 top-10 bottom-0 w-px bg-linear-to-b from-blue-500/20 to-transparent" />
-                  )}
-                  <div className="absolute left-0 top-1 w-10 h-10 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-xs font-bold text-blue-400">
-                    {item.year.slice(2)}
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportConfig}
+              className="grid grid-cols-2 gap-4"
+            >
+              {specialisations.map((item) => (
+                <motion.div
+                  key={item.title}
+                  variants={fadeInUp}
+                  className={`group relative glass-card rounded-2xl p-5 flex flex-col gap-3 border border-edge transition-colors duration-300 ${item.borderHover} overflow-hidden`}
+                >
+                  {/* Per-card background glow on hover */}
+                  <div className={`absolute inset-0 bg-linear-to-br ${item.glowClass} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
+
+                  <div className={`relative w-9 h-9 rounded-xl ${item.iconBg} flex items-center justify-center shrink-0`}>
+                    <item.icon className={`w-4.5 h-4.5 ${item.iconColor}`} />
                   </div>
-                  <div className="glass-card rounded-xl p-4">
-                    <div className="text-xs text-blue-400 font-semibold mb-1">{item.year}</div>
-                    <h3 className="text-sm font-semibold text-ink mb-1">{item.title}</h3>
-                    <p className="text-xs text-ghost leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
+                  <h3 className="relative text-sm font-semibold text-ink leading-snug">{item.title}</h3>
+                  <p className="relative text-xs text-ghost leading-relaxed">{item.desc}</p>
+                </motion.div>
               ))}
             </motion.div>
           </div>
@@ -132,6 +172,7 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <TeamSection />
       <CtaSection />
     </>
   );

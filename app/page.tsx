@@ -4,6 +4,7 @@ import TrustSection from "@/components/sections/TrustSection";
 import ValueSection from "@/components/sections/ValueSection";
 import SolutionsSection from "@/components/sections/SolutionsSection";
 import ProcessSection from "@/components/sections/ProcessSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import LocalGlobalSection from "@/components/sections/LocalGlobalSection";
 import CtaSection from "@/components/sections/CtaSection";
 
@@ -21,6 +22,7 @@ export default function HomePage() {
       <ValueSection />
       <SolutionsSection />
       <ProcessSection />
+      <TestimonialsSection />
       <LocalGlobalSection />
       <CtaSection />
     </>
