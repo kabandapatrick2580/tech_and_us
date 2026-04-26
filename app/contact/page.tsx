@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer, viewportConfig } from "@/lib/utils";
-import { Mail, MapPin, Clock, Send, CheckCircle2, ArrowRight } from "lucide-react";
+import { Mail, MapPin, Clock, Send, CheckCircle2, ArrowRight, Phone } from "lucide-react";
 import ImicongoHeroAccent from "@/components/ui/ImicongoHeroAccent";
 
 const contactInfo = [
@@ -22,6 +22,15 @@ const contactInfo = [
     link: null,
     color: "text-emerald-400",
     bg: "bg-emerald-400/10",
+  }
+  ,
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "+250 780 840 983",
+    link: "tel:+250780840983",
+    color: "text-pink-400",
+    bg: "bg-pink-400/10",
   },
   {
     icon: Clock,
@@ -30,7 +39,7 @@ const contactInfo = [
     link: null,
     color: "text-violet-400",
     bg: "bg-violet-400/10",
-  },
+  }
 ];
 
 const projectTypes = [
@@ -145,7 +154,7 @@ export default function ContactPage() {
                         name="name"
                         value={formState.name}
                         onChange={handleChange}
-                        placeholder="Jane Smith"
+                        placeholder="John Mugisha"
                         className="w-full bg-surface-1 border border-edge rounded-xl px-4 py-3 text-sm text-ink placeholder-ghost focus:border-blue-500/50 focus:bg-surface-2 transition-all duration-200"
                       />
                     </div>
@@ -157,7 +166,7 @@ export default function ContactPage() {
                         name="email"
                         value={formState.email}
                         onChange={handleChange}
-                        placeholder="jane@company.com"
+                        placeholder="john@company.com"
                         className="w-full bg-surface-1 border border-edge rounded-xl px-4 py-3 text-sm text-ink placeholder-ghost focus:border-blue-500/50 focus:bg-surface-2 transition-all duration-200"
                       />
                     </div>
@@ -172,7 +181,7 @@ export default function ContactPage() {
                         name="company"
                         value={formState.company}
                         onChange={handleChange}
-                        placeholder="Acme Corp"
+                        placeholder="Minerz Corp"
                         className="w-full bg-surface-1 border border-edge rounded-xl px-4 py-3 text-sm text-ink placeholder-ghost focus:border-blue-500/50 focus:bg-surface-2 transition-all duration-200"
                       />
                     </div>
