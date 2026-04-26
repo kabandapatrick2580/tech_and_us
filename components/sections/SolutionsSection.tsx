@@ -8,107 +8,61 @@ import Link from "next/link";
 
 const solutions = [
   {
-    icon: Monitor, tag: "Web", title: "Web Applications", color: "blue",
-    description: "Full-stack web platforms built for performance. From internal tools to customer-facing products — we architect and build systems that are fast, reliable, and maintainable.",
+    icon: Monitor,
+    tag: "Web",
+    title: "Web Applications",
+    color: "blue",
+    image: "/website-image.webp",
+    imageAlt: "Web application running in a browser on a laptop",
+    description:
+      "Full-stack web platforms built for performance. From internal tools to customer-facing products — we architect and build systems that are fast, reliable, and maintainable.",
     features: ["React / Next.js", "REST & GraphQL APIs", "Admin dashboards", "Real-time features"],
-    mockup: (
-      <div className="bg-panel rounded-xl p-4 border border-edge">
-        <div className="flex items-center gap-2 mb-3">
-          <div className="flex gap-1">
-            <div className="w-2 h-2 rounded-full bg-[#ff5f57]" /><div className="w-2 h-2 rounded-full bg-[#febc2e]" /><div className="w-2 h-2 rounded-full bg-[#28c840]" />
-          </div>
-          <div className="flex-1 h-3 bg-surface-1 rounded-md mx-2" />
-        </div>
-        <div className="space-y-2">
-          <div className="h-6 bg-blue-500/20 rounded-lg w-3/4" />
-          <div className="grid grid-cols-3 gap-2">
-            {[1,2,3].map((i) => <div key={i} className="h-16 bg-surface-1 rounded-lg border border-edge" />)}
-          </div>
-          <div className="h-3 bg-surface-1 rounded w-full" />
-          <div className="h-3 bg-surface-1 rounded w-4/5" />
-        </div>
-      </div>
-    ),
   },
   {
-    icon: Smartphone, tag: "Mobile", title: "Mobile Applications", color: "violet",
-    description: "Cross-platform mobile apps that feel native. We build iOS and Android applications using React Native — with smooth UX, offline support, and clean architecture.",
+    icon: Smartphone,
+    tag: "Mobile",
+    title: "Mobile Applications",
+    color: "violet",
+    image: "/mobile-2-image.webp",
+    imageAlt: "Mobile applications on a smartphone screen",
+    description:
+      "Cross-platform mobile apps that feel native. We build iOS and Android applications using React Native — with smooth UX, offline support, and clean architecture.",
     features: ["React Native", "iOS & Android", "Push notifications", "Offline-first"],
-    mockup: (
-      <div className="flex justify-center">
-        <div className="w-28 bg-panel rounded-[20px] border border-edge p-2 shadow-xl">
-          <div className="bg-well rounded-[14px] h-48 overflow-hidden p-2">
-            <div className="w-8 h-1 bg-surface-2 rounded-full mx-auto mb-3" />
-            <div className="space-y-1.5">
-              <div className="h-2 bg-violet-500/30 rounded w-3/4" />
-              <div className="h-2 bg-surface-1 rounded w-full" />
-              <div className="h-2 bg-surface-1 rounded w-5/6" />
-            </div>
-            <div className="grid grid-cols-2 gap-1.5 mt-3">
-              {[1,2,3,4].map((i) => <div key={i} className="h-12 bg-surface-1 rounded-xl border border-edge" />)}
-            </div>
-          </div>
-        </div>
-      </div>
-    ),
   },
   {
-    icon: Building2, tag: "Business", title: "Business Systems", color: "emerald",
-    description: "HR, payroll, invoicing, and operational tools built for how your business actually works. We replace spreadsheets and manual processes with purpose-built internal software.",
+    icon: Building2,
+    tag: "Business",
+    title: "Business Systems",
+    color: "emerald",
+    image: "/business-website.webp",
+    imageAlt: "Business dashboard with financial data and analytics",
+    description:
+      "HR, payroll, invoicing, and operational tools built for how your business actually works. We replace spreadsheets and manual processes with purpose-built internal software.",
     features: ["HR & Payroll", "Invoicing systems", "Inventory tools", "Reporting"],
-    mockup: (
-      <div className="bg-panel rounded-xl p-4 border border-edge">
-        <div className="flex items-center justify-between mb-3">
-          <div className="h-3 bg-emerald-500/30 rounded w-1/3" />
-          <div className="h-3 bg-surface-1 rounded w-1/4" />
-        </div>
-        <div className="space-y-2">
-          {[85,60,90,45,72].map((w,i) => (
-            <div key={i} className="flex items-center gap-2">
-              <div className="w-16 h-2 bg-surface-1 rounded" />
-              <div className="flex-1 h-2 bg-surface-1 rounded-full overflow-hidden">
-                <div className="h-full bg-emerald-500/40 rounded-full" style={{ width: `${w}%` }} />
-              </div>
-              <div className="w-8 h-2 bg-surface-1 rounded" />
-            </div>
-          ))}
-        </div>
-      </div>
-    ),
   },
   {
-    icon: Brain, tag: "AI", title: "AI-Enhanced Tools", color: "amber",
-    description: "Add intelligence to your existing workflows. We integrate AI features — smart search, document processing, recommendations, and automation — into your products and platforms.",
+    icon: Brain,
+    tag: "AI",
+    title: "AI-Enhanced Tools",
+    color: "amber",
+    image: "/ai-image.webp",
+    imageAlt: "AI-powered automation and document processing",
+    description:
+      "Add intelligence to your existing workflows. We integrate AI features — smart search, document processing, recommendations, and automation — into your products and platforms.",
     features: ["LLM integrations", "Smart automation", "Document AI", "Predictions"],
-    mockup: (
-      <div className="bg-panel rounded-xl p-4 border border-edge">
-        <div className="flex items-center gap-2 mb-3">
-          <div className="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center">
-            <Brain className="w-3 h-3 text-amber-400" />
-          </div>
-          <div className="h-2 bg-amber-500/30 rounded w-1/3" />
-        </div>
-        <div className="space-y-2">
-          {["Analysing document...", "Extracting key data...", "Generating summary..."].map((t,i) => (
-            <div key={i} className="flex items-center gap-2 p-2 bg-surface-1 rounded-lg border border-edge">
-              <div className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-              <div className="text-[9px] text-ghost">{t}</div>
-            </div>
-          ))}
-          <div className="h-8 bg-amber-500/10 border border-amber-500/20 rounded-lg flex items-center px-2">
-            <div className="text-[9px] text-amber-400">✓ Analysis complete</div>
-          </div>
-        </div>
-      </div>
-    ),
   },
 ];
 
-const colorMap: Record<string, { border: string; tag: string; feature: string }> = {
-  blue:    { border: "border-blue-500/20 hover:border-blue-500/40",    tag: "bg-blue-500/10 text-blue-400",    feature: "text-blue-400"    },
-  violet:  { border: "border-violet-500/20 hover:border-violet-500/40", tag: "bg-violet-500/10 text-violet-400", feature: "text-violet-400"  },
-  emerald: { border: "border-emerald-500/20 hover:border-emerald-500/40",tag: "bg-emerald-500/10 text-emerald-400",feature: "text-emerald-400"},
-  amber:   { border: "border-amber-500/20 hover:border-amber-500/40",   tag: "bg-amber-500/10 text-amber-400",   feature: "text-amber-400"   },
+const colorMap: Record<string, {
+  border: string;
+  tag: string;
+  feature: string;
+  gradient: string;
+}> = {
+  blue:    { border: "border-blue-500/20 hover:border-blue-500/40",     tag: "bg-blue-500/10 text-blue-400",     feature: "text-blue-400",    gradient: "from-blue-500/20"    },
+  violet:  { border: "border-violet-500/20 hover:border-violet-500/40", tag: "bg-violet-500/10 text-violet-400", feature: "text-violet-400",  gradient: "from-violet-500/20"  },
+  emerald: { border: "border-emerald-500/20 hover:border-emerald-500/40",tag: "bg-emerald-500/10 text-emerald-400",feature: "text-emerald-400",gradient: "from-emerald-500/20" },
+  amber:   { border: "border-amber-500/20 hover:border-amber-500/40",   tag: "bg-amber-500/10 text-amber-400",   feature: "text-amber-400",   gradient: "from-amber-500/20"   },
 };
 
 export default function SolutionsSection() {
@@ -138,25 +92,52 @@ export default function SolutionsSection() {
               <motion.div
                 key={s.title}
                 variants={fadeInUp}
-                className={`group glass-card rounded-2xl p-6 border ${c.border} transition-all duration-300 hover:shadow-xl`}
+                className={`group glass-card rounded-2xl border ${c.border} transition-all duration-300 hover:shadow-xl overflow-hidden`}
               >
-                <div className="flex items-start justify-between mb-5">
-                  <div className="flex items-center gap-3">
-                    <div className={`px-2.5 py-1 rounded-lg text-xs font-semibold ${c.tag}`}>{s.tag}</div>
-                    <h3 className="text-base font-semibold text-ink">{s.title}</h3>
+                {/* Image */}
+                <div className="relative h-48 overflow-hidden">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={s.image}
+                    alt={s.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Bottom gradient fade into card background */}
+                  <div className={`absolute inset-x-0 bottom-0 h-20 bg-linear-to-t ${c.gradient} to-transparent`} />
+                  {/* Tag pill — sits on the image */}
+                  <div className="absolute top-3 left-3">
+                    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold backdrop-blur-sm ${c.tag}`}>
+                      <s.icon className="w-3 h-3" />
+                      {s.tag}
+                    </span>
                   </div>
-                  <s.icon className={`w-5 h-5 ${c.feature} shrink-0`} />
                 </div>
-                <div className="mb-5 overflow-hidden">{s.mockup}</div>
-                <p className="text-sm text-dim leading-relaxed mb-4">{s.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {s.features.map((f) => (
-                    <span key={f} className={`text-xs ${c.feature} bg-surface-1 px-2.5 py-1 rounded-lg border border-edge`}>{f}</span>
-                  ))}
+
+                {/* Content */}
+                <div className="p-6">
+                  <h3 className="text-base font-semibold text-ink mb-2">{s.title}</h3>
+                  <p className="text-sm text-dim leading-relaxed mb-4">{s.description}</p>
+
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {s.features.map((f) => (
+                      <span
+                        key={f}
+                        className={`text-xs ${c.feature} bg-surface-1 px-2.5 py-1 rounded-lg border border-edge`}
+                      >
+                        {f}
+                      </span>
+                    ))}
+                  </div>
+
+                  <Link
+                    href="/services"
+                    className={`inline-flex items-center gap-1.5 text-xs font-semibold ${c.feature} opacity-0 group-hover:opacity-100 transition-opacity duration-200`}
+                  >
+                    Learn more <ArrowRight className="w-3 h-3" />
+                  </Link>
                 </div>
-                <Link href="/services" className={`inline-flex items-center gap-1.5 text-xs font-semibold ${c.feature} opacity-0 group-hover:opacity-100 transition-opacity`}>
-                  Learn more <ArrowRight className="w-3 h-3" />
-                </Link>
               </motion.div>
             );
           })}

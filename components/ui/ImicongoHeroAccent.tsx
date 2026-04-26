@@ -12,7 +12,7 @@ export default function ImicongoHeroAccent() {
   return (
     <div
       aria-hidden="true"
-      className="absolute top-0 right-0 w-[25%] max-w-[560px] h-full hidden sm:block pointer-events-none"
+      className="absolute top-0 right-0 w-[25%] max-w-140 h-full hidden sm:block pointer-events-none"
       style={{
         backgroundImage: "url('/Imigongo_larger.svg')",
         backgroundSize: "cover",
