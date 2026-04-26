@@ -86,7 +86,7 @@ export default function HeroSection() {
               <img
                 src="/hero_2.png"
                 alt="Tech & Us — scalable web and mobile solutions"
-                className="relative w-full h-auto rounded-xl shadow-2xl"
+                className="relative w-full h-auto"
               />
             {/* Floating badge — bottom left */}
             <motion.div
