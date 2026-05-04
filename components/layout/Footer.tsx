@@ -58,7 +58,7 @@ export default function Footer() {
                 className="inline-flex items-center gap-2 text-sm text-dim hover:text-ink transition-colors"
               >
                 <Mail className="w-4 h-4 text-blue-400" />
-                hello@techandus.rw
+                support@techandus.com
               </a>
               <span className="inline-flex items-center gap-2 text-sm text-dim">
                 <MapPin className="w-4 h-4 text-blue-400" />

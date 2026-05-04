@@ -168,11 +168,11 @@ export default function WorkPage() {
               Our Work
             </motion.span>
             <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-tight tracking-tight mb-6">
-              What we&apos;re building —{" "}
-              <span className="gradient-text">and what shaped us</span>
+              Digital systems we&apos;ve built —{" "}
+              <span className="gradient-text">and automated</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-dim leading-relaxed max-w-2xl">
-              Here&apos;s what&apos;s actively in the works under Tech & Us, plus the domains our team has hands-on experience in from previous roles.
+              A look at the custom software, business process automations, and integration solutions our team has delivered.
             </motion.p>
           </motion.div>
         </div>

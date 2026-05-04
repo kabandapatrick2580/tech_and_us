@@ -4,87 +4,80 @@ import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer, viewportConfig } from "@/lib/utils";
 import Button from "@/components/ui/Button";
 import { 
-  Code, PenTool, TrendingUp, Box, 
-  Rocket, CheckCircle2, ArrowRight, Zap, Layers, Star 
+  Code, PenTool, Box, 
+  Rocket, CheckCircle2, LayoutDashboard, PlugZap, Server
 } from "lucide-react";
 import ImicongoHeroAccent from "@/components/ui/ImicongoHeroAccent";
 
-const phases = [
+const services = [
   {
-    id: "build", 
-    title: "BUILD", 
-    subtitle: "Foundation",
-    icon: Code, 
+    id: "digitization",
+    title: "Business Process Digitization",
+    icon: LayoutDashboard,
     color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20",
-    description: "Robust software and platforms engineered for scale.",
-    items: [
-      { title: "IT Consultancy", desc: "Strategic technical guidance and system architecture." },
-      { title: "Software / Mobile Development", desc: "Custom web applications and cross-platform native apps." }
-    ]
+    problem: "Manual processes, spreadsheets, and disconnected tools are slowing down your operations and causing errors.",
+    solution: "We digitize your core workflows into centralized, automated systems that run your business efficiently.",
+    features: ["Custom ERP/CRM Development", "Internal Admin Dashboards", "Workflow Automation", "Reporting & Analytics"],
+    useCases: ["Replacing Excel with custom software", "Automating approval flows", "Centralizing operational data"]
   },
   {
-    id: "brand", 
-    title: "BRAND", 
-    subtitle: "Identity",
-    icon: PenTool, 
+    id: "software",
+    title: "Custom Software Development",
+    icon: Code,
     color: "text-violet-400", bg: "bg-violet-500/10", border: "border-violet-500/20",
-    description: "Memorable identities that capture your vision and stand out.",
-    items: [
-      { title: "Logo & Identity Design", desc: "Visual systems that communicate your core values." },
-      { title: "Marketing Materials", desc: "High-quality assets for digital and physical touchpoints." }
-    ]
+    problem: "Off-the-shelf software doesn't fit your unique business model or scale with your growth.",
+    solution: "We build scalable, secure, and high-performance custom web and mobile applications tailored to your exact needs.",
+    features: ["Full-Stack Web Apps", "React Native Mobile Apps", "API Development", "Cloud Architecture"],
+    useCases: ["Customer-facing SaaS platforms", "B2B vendor portals", "Native mobile applications"]
   },
   {
-    id: "grow", 
-    title: "GROW", 
-    subtitle: "Acquisition",
-    icon: TrendingUp, 
+    id: "design",
+    title: "Product Design & UX",
+    icon: PenTool,
     color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20",
-    description: "Strategies and tools to reach your audience and drive adoption.",
-    items: [
-      { title: "Digital Marketing", desc: "Data-driven campaigns across multiple digital platforms." },
-      { title: "AI Video Ads & Voice Overs", desc: "Cutting-edge multimedia content for high conversion." }
-    ]
-  }
-];
-
-const solutions = [
-  {
-    name: "Goalifai",
-    category: "Fintech Platform",
-    status: "Beta",
-    description: "A personal finance app helping individuals set, track, and reach their financial goals with smart analytics and automated nudges.",
+    problem: "Your software is functional but confusing to use, leading to poor user adoption and high training costs.",
+    solution: "We design intuitive, accessibility-first interfaces that users actually want to interact with.",
+    features: ["UI/UX Design", "Wireframing & Prototyping", "Design Systems", "User Testing"],
+    useCases: ["Revamping legacy software UI", "Designing a new product from scratch", "Improving conversion funnels"]
   },
   {
-    name: "SyncFlow",
-    category: "Data Tool",
-    status: "Coming Soon",
-    description: "Purpose-built middleware for migrating and syncing business data cleanly and reliably across CRMs, ERPs, and accounting tools.",
-  },
-];
-
-const packages = [
-  {
-    name: "Startup Package",
-    desc: "Everything you need to launch your idea.",
-    features: ["Brand Identity & Logo", "Landing Page Development", "Basic SEO & Analytics", "Social Media Assets"],
+    id: "integrations",
+    title: "Payment & System Integrations",
+    icon: PlugZap,
+    color: "text-amber-400", bg: "bg-amber-500/10", border: "border-amber-500/20",
+    problem: "Your data is trapped in silos, and manual data entry between systems is costing you time and money.",
+    solution: "We build secure integration layers that connect your tools, databases, and payment processors seamlessly.",
+    features: ["Payment Gateway Setup (Stripe, Local gateways)", "API Middleware", "Accounting Sync (QuickBooks, Xero)", "Webhook Handling"],
+    useCases: ["Automating invoice generation", "Syncing CRM with operations data", "Handling complex USSD or local payments"]
   },
   {
-    name: "Growth Package",
-    desc: "Scale your existing product and reach.",
-    features: ["Marketing Automation", "Performance Optimisation", "Ad Campaigns & AI Videos", "Conversion Tracking"],
+    id: "support",
+    title: "IT Support & Automation",
+    icon: Server,
+    color: "text-rose-400", bg: "bg-rose-500/10", border: "border-rose-500/20",
+    problem: "Your infrastructure is unreliable, and your team is spending too much time on manual tech maintenance.",
+    solution: "We provide robust IT support and automate infrastructure management so your systems stay online and secure.",
+    features: ["Cloud Infrastructure Setup (AWS, Vercel)", "CI/CD Pipelines", "System Monitoring & Alerts", "Ongoing Technical Support"],
+    useCases: ["Migrating legacy servers to the cloud", "Setting up automated backups", "Ensuring 99.9% uptime"]
   },
   {
-    name: "Enterprise Package",
-    desc: "Custom solutions for complex operations.",
-    features: ["Custom ERP/CRM Systems", "API Integrations", "Dedicated Technical Support", "Infrastructure Scaling"],
+    id: "startup",
+    title: "Startup MVP Development",
+    icon: Rocket,
+    color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20",
+    problem: "You have a validated idea but need a reliable technical partner to build a market-ready product quickly.",
+    solution: "We architect and build robust Minimum Viable Products focused on core value, ready to launch and scale.",
+    features: ["Rapid Prototyping", "Scalable Tech Stack", "Core Feature Development", "Launch Support"],
+    useCases: ["Bringing a new SaaS to market", "Building a two-sided marketplace", "Creating a fintech proof-of-concept"]
   }
 ];
 
 const processSteps = [
-  { step: "01", title: "Discover", desc: "We analyze your business needs, market landscape, and technical requirements to define a clear roadmap." },
-  { step: "02", title: "Design & Build", desc: "Our team crafts the brand architecture, UI/UX, and robust software functionality iteratively." },
-  { step: "03", title: "Launch & Grow", desc: "We deploy to production and implement data-driven marketing strategies to scale your user base." }
+  { step: "01", title: "Discovery", desc: "We analyze your business operations, identify manual bottlenecks, and map out the digital systems required to solve them." },
+  { step: "02", title: "Design", desc: "Our team designs the system architecture, database structure, and intuitive user interfaces focused on business outcomes." },
+  { step: "03", title: "Development", desc: "We build the custom software, integrate necessary third-party tools, and implement workflow automation." },
+  { step: "04", title: "Deployment", desc: "We deploy the solution securely to production, ensuring seamless data migration and zero downtime." },
+  { step: "05", title: "Support", desc: "We provide ongoing IT support, system monitoring, and infrastructure scaling as your business grows." }
 ];
 
 export default function ServicesPage() {
@@ -102,147 +95,83 @@ export default function ServicesPage() {
               Services & Solutions
             </motion.span>
             <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-tight tracking-tight mb-6">
-              From Idea to Impact — We <span className="text-blue-500">Build</span>, <span className="text-violet-500">Brand</span>, and <span className="text-emerald-500">Grow</span> Digital Solutions
+              Digital Systems That Power Your <span className="text-blue-500">Business</span> Growth
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-dim leading-relaxed max-w-2xl">
-              We help businesses launch and scale while building our own innovative solutions for the market. A true hybrid tech partner.
+              We are solutions architects helping businesses digitize operations, automate workflows, and scale efficiently through custom software and system integration.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-3 mt-8">
               <Button href="/contact" icon>Start Your Project</Button>
-              <Button href="#solutions" variant="secondary">Explore Our Solutions</Button>
+              <Button href="#services" variant="secondary">Explore Services</Button>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* How it Works / Service Flow */}
-      <section className="py-12 border-y border-edge bg-surface-1/30">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="grid md:grid-cols-3 gap-8 relative">
-            {phases.map((phase, i) => (
-              <motion.div key={phase.id} variants={fadeInUp} className="relative z-10">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className={`w-12 h-12 rounded-2xl ${phase.bg} border ${phase.border} flex items-center justify-center shrink-0`}>
-                    <phase.icon className={`w-5 h-5 ${phase.color}`} />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-ink tracking-widest">{phase.title}</h3>
-                    <p className="text-xs text-ghost uppercase tracking-wider">{phase.subtitle}</p>
-                  </div>
-                </div>
-                <p className="text-sm text-dim leading-relaxed pr-4">{phase.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Detailed Services Grouped */}
-      <section className="py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-8">
+      {/* Services List */}
+      <section id="services" className="py-20 lg:py-28 border-t border-edge bg-surface-1/30">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-12">
           
           <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={viewportConfig} className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">Our Core Expertise</h2>
-            <p className="text-dim max-w-2xl text-lg">We provide end-to-end digital services structured around the three pillars of a successful tech business.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">Our Expertise</h2>
+            <p className="text-dim max-w-2xl text-lg">We provide end-to-end digital systems development structured around solving real business problems.</p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-3 gap-6">
-          {phases.map((phase) => (
+          <div className="grid lg:grid-cols-2 gap-8">
+          {services.map((svc) => (
             <motion.div
-              key={phase.id}
+              key={svc.id}
               variants={fadeInUp}
               initial="hidden"
               whileInView="visible"
               viewport={viewportConfig}
-              className={`glass-card rounded-2xl border ${phase.border} p-8 flex flex-col h-full`}
+              className={`glass-card rounded-2xl border ${svc.border} p-8 flex flex-col h-full hover:shadow-lg transition-all duration-300`}
             >
-              <div className="flex items-center gap-3 mb-8">
-                <div className={`w-10 h-10 rounded-xl ${phase.bg} flex items-center justify-center`}>
-                  <phase.icon className={`w-5 h-5 ${phase.color}`} />
+              <div className="flex items-center gap-4 mb-6">
+                <div className={`w-12 h-12 rounded-xl ${svc.bg} flex items-center justify-center shrink-0`}>
+                  <svc.icon className={`w-6 h-6 ${svc.color}`} />
                 </div>
-                <h2 className="text-2xl font-bold text-ink">{phase.title}</h2>
+                <h2 className="text-2xl font-bold text-ink">{svc.title}</h2>
               </div>
               
               <div className="space-y-6 flex-1">
-                {phase.items.map((item, idx) => (
-                  <div key={idx}>
-                    <h3 className="text-sm font-bold text-ink mb-1">{item.title}</h3>
-                    <p className="text-sm text-dim leading-relaxed">{item.desc}</p>
+                <div>
+                  <h3 className="text-xs font-bold text-ghost uppercase tracking-wider mb-2">The Problem</h3>
+                  <p className="text-sm text-dim leading-relaxed">{svc.problem}</p>
+                </div>
+                <div>
+                  <h3 className="text-xs font-bold text-ghost uppercase tracking-wider mb-2">Our Solution</h3>
+                  <p className="text-sm text-ink leading-relaxed">{svc.solution}</p>
+                </div>
+                
+                <div className="grid sm:grid-cols-2 gap-6 pt-4 border-t border-edge">
+                  <div>
+                    <h3 className="text-xs font-bold text-ghost uppercase tracking-wider mb-3">What You Get</h3>
+                    <ul className="space-y-2">
+                      {svc.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-dim">
+                          <CheckCircle2 className={`w-4 h-4 ${svc.color} shrink-0 mt-0.5`} />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                ))}
+                  <div>
+                    <h3 className="text-xs font-bold text-ghost uppercase tracking-wider mb-3">Use Cases</h3>
+                    <ul className="space-y-2">
+                      {svc.useCases.map((useCase, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-dim">
+                          <Box className="w-4 h-4 text-ghost shrink-0 mt-0.5" />
+                          {useCase}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
           </div>
-        </div>
-      </section>
-
-      {/* Our Solutions Layer */}
-      <section id="solutions" className="py-20 lg:py-28 border-t border-edge bg-surface-1/10 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-150 h-150 bg-blue-500/5 rounded-full blur-[150px] pointer-events-none" />
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={viewportConfig} className="mb-12 text-center">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-surface-2 text-ghost border border-edge tracking-wide uppercase mb-4">
-              Internal Products
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-ink mb-4">Our Solutions</h2>
-            <p className="text-dim max-w-2xl mx-auto text-lg">We don’t just offer services — we build complete digital ecosystems and create platforms for the future.</p>
-          </motion.div>
-
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="grid md:grid-cols-2 gap-6 lg:gap-8">
-            {solutions.map((solution, idx) => (
-              <motion.div key={idx} variants={fadeInUp} className="group glass-card border border-edge hover:border-ghost transition-all duration-300 rounded-3xl p-8 relative overflow-hidden">
-                <div className="absolute inset-0 bg-linear-to-br from-surface-1/50 to-surface-2/20 pointer-events-none" />
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-surface-2 border border-edge flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
-                      <Box className="w-6 h-6 text-ghost" />
-                    </div>
-                    <span className={`px-2.5 py-1 rounded-md text-xs font-medium border ${solution.status === 'Live' || solution.status === 'Beta' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' : 'bg-amber-500/10 text-amber-400 border-amber-500/20'}`}>
-                      {solution.status}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold text-ink mb-2">{solution.name}</h3>
-                  <p className="text-xs text-ghost font-mono uppercase tracking-wider mb-4">{solution.category}</p>
-                  <p className="text-sm text-dim leading-relaxed mb-8 flex-1">{solution.description}</p>
-                  
-                  <Button variant="secondary" size="sm" className="w-fit" icon>Learn More</Button>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Solution Packages */}
-      <section className="py-20 lg:py-28 border-t border-edge">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={viewportConfig} className="mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">Solution Packages</h2>
-            <p className="text-dim max-w-2xl mx-auto text-lg">Bundle our services to match the exact stage of your business growth.</p>
-          </motion.div>
-
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="grid lg:grid-cols-3 gap-6">
-            {packages.map((pkg, idx) => (
-              <motion.div key={idx} variants={fadeInUp} className="glass-card rounded-2xl p-8 border border-edge hover:border-ghost transition-colors flex flex-col">
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-ink mb-2">{pkg.name}</h3>
-                  <p className="text-sm text-ghost">{pkg.desc}</p>
-                </div>
-                <ul className="space-y-3 mb-8 flex-1">
-                  {pkg.features.map((feature, fIdx) => (
-                    <li key={fIdx} className="flex items-start gap-2 text-sm text-dim">
-                      <CheckCircle2 className="w-4 h-4 text-ghost shrink-0 mt-0.5" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button variant="secondary" className="w-full justify-center">Inquire Now</Button>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
@@ -251,10 +180,10 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={viewportConfig} className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-ink mb-4">Our Process</h2>
-            <p className="text-dim max-w-2xl text-lg">A systematic approach to bringing your vision to market.</p>
+            <p className="text-dim max-w-2xl text-lg">A systematic approach to digitizing and scaling your operations.</p>
           </motion.div>
 
-          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="grid md:grid-cols-3 gap-8 lg:gap-12 relative">
+          <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig} className="grid md:grid-cols-5 gap-6 lg:gap-8 relative">
             {/* Connecting line for desktop */}
             <div className="hidden md:block absolute top-6 left-[10%] right-[10%] h-px bg-edge border-dashed border-b pointer-events-none" />
             
@@ -263,8 +192,8 @@ export default function ServicesPage() {
                 <div className="w-12 h-12 rounded-full bg-surface-1 border border-edge flex items-center justify-center mb-6 shadow-sm mx-auto md:mx-0">
                   <span className="text-sm font-bold text-ghost">{step.step}</span>
                 </div>
-                <h3 className="text-xl font-bold text-ink mb-3 text-center md:text-left">{step.title}</h3>
-                <p className="text-sm text-dim leading-relaxed text-center md:text-left">{step.desc}</p>
+                <h3 className="text-lg font-bold text-ink mb-3 text-center md:text-left">{step.title}</h3>
+                <p className="text-xs text-dim leading-relaxed text-center md:text-left">{step.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -279,10 +208,10 @@ export default function ServicesPage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig}>
             <motion.h2 variants={fadeInUp} className="text-4xl sm:text-5xl font-bold text-ink mb-6 tracking-tight">
-              Ready to <span className="text-blue-500">Build</span>, <span className="text-violet-500">Brand</span>, and <span className="text-emerald-500">Grow</span>?
+              Ready to digitize your <span className="text-blue-500">business operations</span>?
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-lg text-dim mb-10 max-w-2xl mx-auto">
-              Whether you need an end-to-end service or access to one of our market-ready solutions, we&apos;re ready to help you succeed.
+              Stop relying on manual workflows and disconnected tools. Let's build the systems that will scale your business efficiently.
             </motion.p>
             <motion.div variants={fadeInUp}>
               <Button href="/contact" size="lg" icon>

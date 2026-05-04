@@ -3,53 +3,53 @@
 import { motion } from "framer-motion";
 import { staggerContainer, fadeInUp, viewportConfig } from "@/lib/utils";
 import SectionHeader from "@/components/ui/SectionHeader";
-import { Monitor, Smartphone, Building2, Brain, ArrowRight } from "lucide-react";
+import { Monitor, Building2, PlugZap, Rocket, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const solutions = [
   {
-    icon: Monitor,
-    tag: "Web",
-    title: "Web Applications",
-    color: "blue",
-    image: "/website-image.webp",
-    imageAlt: "Web application running in a browser on a laptop",
-    description:
-      "Full-stack web platforms built for performance. From internal tools to customer-facing products — we architect and build systems that are fast, reliable, and maintainable.",
-    features: ["React / Next.js", "REST & GraphQL APIs", "Admin dashboards", "Real-time features"],
-  },
-  {
-    icon: Smartphone,
-    tag: "Mobile",
-    title: "Mobile Applications",
-    color: "violet",
-    image: "/mobile-2-image.webp",
-    imageAlt: "Mobile applications on a smartphone screen",
-    description:
-      "Cross-platform mobile apps that feel native. We build iOS and Android applications using React Native — with smooth UX, offline support, and clean architecture.",
-    features: ["React Native", "iOS & Android", "Push notifications", "Offline-first"],
-  },
-  {
     icon: Building2,
-    tag: "Business",
-    title: "Business Systems",
+    tag: "Digitization",
+    title: "Business Process Digitization",
     color: "emerald",
     image: "/business-website.webp",
-    imageAlt: "Business dashboard with financial data and analytics",
+    imageAlt: "Business dashboard with automated workflows",
     description:
-      "HR, payroll, invoicing, and operational tools built for how your business actually works. We replace spreadsheets and manual processes with purpose-built internal software.",
-    features: ["HR & Payroll", "Invoicing systems", "Inventory tools", "Reporting"],
+      "Move away from manual spreadsheets and disconnected tools. We architect centralized, automated systems that run your core business operations smoothly.",
+    features: ["Internal Dashboards", "Workflow Automation", "ERP/CRM Development", "Data Centralization"],
   },
   {
-    icon: Brain,
-    tag: "AI",
-    title: "AI-Enhanced Tools",
+    icon: Monitor,
+    tag: "Web Apps",
+    title: "Custom Web Applications",
+    color: "blue",
+    image: "/website-image.webp",
+    imageAlt: "High-performance custom web application",
+    description:
+      "Scalable, secure, and fast web platforms built for your specific business logic. We focus on reliable architecture that supports your growth.",
+    features: ["React / Next.js", "REST & GraphQL APIs", "Scalable Architecture", "High Performance"],
+  },
+  {
+    icon: PlugZap,
+    tag: "Integrations",
+    title: "Payment & System Integrations",
+    color: "violet",
+    image: "/mobile-2-image.webp",
+    imageAlt: "System integration and payment gateways",
+    description:
+      "Connect your fragmented tools. We build secure API middleware and payment gateway integrations so your data flows seamlessly across all platforms.",
+    features: ["Payment Gateways", "API Middleware", "Accounting Sync", "Webhook Infrastructure"],
+  },
+  {
+    icon: Rocket,
+    tag: "Startups",
+    title: "Startup MVP Development",
     color: "amber",
     image: "/ai-image.webp",
-    imageAlt: "AI-powered automation and document processing",
+    imageAlt: "Startup MVP and rapid prototyping",
     description:
-      "Add intelligence to your existing workflows. We integrate AI features — smart search, document processing, recommendations, and automation — into your products and platforms.",
-    features: ["LLM integrations", "Smart automation", "Document AI", "Predictions"],
+      "Turn your validated idea into a market-ready product. We build robust Minimum Viable Products focused on core value, ready to launch and scale.",
+    features: ["Rapid Prototyping", "Core Feature Build", "Scalable Tech Stack", "Launch Support"],
   },
 ];
 

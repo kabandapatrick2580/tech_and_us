@@ -11,8 +11,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@techandus.rw",
-    link: "mailto:hello@techandus.rw",
+    value: "support@techandus.com",
+    link: "mailto:support@techandus.com",
     color: "text-blue-400",
     bg: "bg-blue-400/10",
   },

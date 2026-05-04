@@ -79,11 +79,11 @@ export default function AboutPage() {
               About Us
             </motion.span>
             <motion.h1 variants={fadeInUp} className="text-4xl sm:text-5xl lg:text-6xl font-bold text-ink leading-tight tracking-tight mb-6">
-              A team that builds{" "}
-              <span className="gradient-text">things that work</span>
+              Systems builders that help you{" "}
+              <span className="gradient-text">scale efficiently</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg text-dim leading-relaxed mb-8 max-w-2xl">
-              Tech & Us is a software and systems company based in Kigali, Rwanda. We build payment integrations, operational tools, and backend infrastructure for fintech, SaaS, and operations-heavy businesses — locally and internationally.
+              Tech & Us is a solutions architecture firm based in Kigali, Rwanda. We focus on business process digitization, helping companies move from manual workflows to automated, custom-built digital systems.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-3">
               <Button href="/work" icon>See Our Work</Button>
@@ -99,13 +99,13 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <motion.div variants={fadeInLeft} initial="hidden" whileInView="visible" viewport={viewportConfig}>
               <h2 className="text-2xl sm:text-3xl font-bold text-ink mb-6 leading-tight">
-                Built for businesses with real operational complexity
+                Built for businesses that need to digitize operations
               </h2>
               <div className="space-y-4 text-dim text-base leading-relaxed">
-                <p>Tech & Us specialises in the parts of software most agencies avoid — payment systems, accounting integrations, internal operations tools, and backend infrastructure that has to perform when the business depends on it.</p>
-                <p>Our work spans fintech platforms, SaaS products, and operations-heavy businesses across Rwanda and internationally. Delivered projects include payment pipelines processing over 50,000 transactions, integrations with QuickBooks and local payment providers, and internal systems that replaced manual workflows entirely.</p>
-                <p>We engage directly with founders, operations leads, and technical teams — without project management layers that slow things down. Every engagement begins with a thorough understanding of how the business actually runs before any architecture is proposed.</p>
-                <p>The standard we hold ourselves to: systems that are maintainable, properly documented, and built to scale with the business — not just to clear a deadline.</p>
+                <p>Tech & Us specializes in systems thinking. We don't just build websites or standalone apps—we engineer complete digital ecosystems. Our work spans business process digitization, custom software development, payment integrations, and IT automation.</p>
+                <p>We help businesses transition from slow, error-prone manual processes into streamlined automated workflows. We've delivered end-to-end solutions including custom ERPs, internal admin dashboards, and complex API integrations for local and international operations.</p>
+                <p>Our differentiation lies in our focus on real business outcomes. We engage directly with your operational teams to understand the bottlenecks before proposing an architecture. From discovery and design to deployment and ongoing IT support, we handle the entire system lifecycle.</p>
+                <p>The standard we hold ourselves to: high-performance systems that are secure, properly documented, and designed to scale your business efficiently.</p>
               </div>
             </motion.div>
 
