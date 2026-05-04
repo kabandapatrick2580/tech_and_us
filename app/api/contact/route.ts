@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const TO_EMAIL = "kabanda.patrick2580@gmail.com";
+const TO_EMAILS = ["kabanda.patrick2580@gmail.com", "support@techandus.com"];
 
 export async function POST(request: NextRequest) {
   const body = await request.json() as {
@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
 
   const { error } = await resend.emails.send({
     from: "Tech & Us Contact <onboarding@resend.dev>",
-    to: [TO_EMAIL],
+    to: TO_EMAILS,
     replyTo: email,
     subject: `New inquiry from ${name}${company ? ` — ${company}` : ""}`,
     html: `
