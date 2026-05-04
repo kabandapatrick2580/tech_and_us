@@ -179,7 +179,7 @@ export default function ServicesPage() {
 
       {/* Our Solutions Layer */}
       <section id="solutions" className="py-20 lg:py-28 border-t border-edge bg-surface-1/10 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute top-0 right-0 w-150 h-150 bg-blue-500/5 rounded-full blur-[150px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={viewportConfig} className="mb-12 text-center">
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-surface-2 text-ghost border border-edge tracking-wide uppercase mb-4">
@@ -274,7 +274,7 @@ export default function ServicesPage() {
       {/* Custom Final CTA */}
       <section className="py-24 lg:py-32 border-t border-edge relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[300px] bg-blue-500/10 rounded-t-full blur-[100px]" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-75 bg-blue-500/10 rounded-t-full blur-[100px]" />
         </div>
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={viewportConfig}>
