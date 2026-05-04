@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Tech & Us is a solutions architecture firm focused on business process digitization, helping companies move from manual workflows to automated digital systems.",
   keywords: [
     "systems builders", "solutions architects", "digital ecosystems", 
-    "IT automation", "Rwanda tech company", "software engineering"
+    "IT automation", "Rwanda tech company", "software engineering", "Affordable IT"
   ],
 };
 
