@@ -111,7 +111,7 @@ const currentProjects = [
     mockup: (
       <div className="flex justify-center">
         <div className="w-36 bg-panel rounded-[22px] border border-edge p-2 shadow-2xl">
-          <div className="bg-well rounded-[16px] overflow-hidden">
+          <div className="bg-well rounded-2xl overflow-hidden">
             <div className="flex justify-between items-center px-3 py-2">
               <div className="text-[8px] text-ghost">9:41</div>
               <div className="w-8 h-1 bg-surface-2 rounded-full" />

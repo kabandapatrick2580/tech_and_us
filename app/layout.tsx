@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://techandus.rw"),
+  metadataBase: new URL("https://www.techandus.com"),
   title: {
     default: "Tech & Us — Technology That Moves Your Business Forward",
     template: "%s | Tech & Us",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://techandus.rw",
+    url: "https://www.techandus.com",
     siteName: "Tech & Us",
     title: "Tech & Us — Technology That Moves Your Business Forward",
     description:

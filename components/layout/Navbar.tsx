@@ -12,6 +12,7 @@ const navLinks = [
   { label: "About",    href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Work",     href: "/work" },
+  { label: "Products", href: "/products" },
   { label: "Contact",  href: "/contact" },
 ];
 
@@ -47,7 +48,7 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-[70px]">
+          <div className="flex items-center justify-between h-16 lg:h-17.5">
 
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5">
