@@ -10,8 +10,8 @@ const FADE_W   = 55;    // edge fade zone per side
 const SPEED    = 80;    // px/s phase advance
 const LERP_K   = 7;     // cursor follow smoothness (higher = snappier)
 
-const MAIN_RGB = "224,194,136";  // #e0c288  amber-gold
-const ECHO_RGB = "151,133,101";  // #978565  tan-brown
+const MAIN_RGB = "224,194,136";  // #e0c288 secondary gold
+const ECHO_RGB = "210,105,30";   // #d2691e copper accent
 
 const WAYPOINTS = [
   { p: 0.00, y:   0 },

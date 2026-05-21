@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     subject: `New inquiry from ${name}${company ? ` — ${company}` : ""}`,
     html: `
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #1f2937;">
-        <h2 style="border-bottom: 2px solid #3b82f6; padding-bottom: 8px; color: #111827;">
+        <h2 style="border-bottom: 2px solid #d2691e; padding-bottom: 8px; color: #3f372a;">
           New Project Inquiry
         </h2>
 
@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
           </tr>
           <tr>
             <td style="padding: 8px 0; color: #6b7280; vertical-align: top;">Email</td>
-            <td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #3b82f6;">${email}</a></td>
+            <td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #d2691e;">${email}</a></td>
           </tr>
           ${company ? `
           <tr>
@@ -51,7 +51,7 @@ export async function POST(request: NextRequest) {
           </tr>` : ""}
         </table>
 
-        <div style="background: #f9fafb; border-left: 3px solid #3b82f6; padding: 16px 20px; border-radius: 4px; margin: 24px 0;">
+        <div style="background: #fff9ef; border-left: 3px solid #d2691e; padding: 16px 20px; border-radius: 4px; margin: 24px 0;">
           <p style="margin: 0 0 6px; color: #6b7280; font-size: 13px;">Message</p>
           <p style="margin: 0; white-space: pre-wrap; line-height: 1.6;">${message}</p>
         </div>

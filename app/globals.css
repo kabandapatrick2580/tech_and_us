@@ -9,70 +9,76 @@
 /* Dark theme (default) */
 :root {
   /* ── BRAND ACCENT COLORS ─────────────────────────────────────────────────
-     To retheme the site, change the six hex values and the two hue angles.
+     To retheme the site, change the three palette values below first.
+     The alias tokens keep dark-mode accents readable while preserving the
+     primary/secondary/accent hierarchy across gradients and surfaces.
      See lib/colors.ts for full documentation and reference values.
   ────────────────────────────────────────────────────────────────────────── */
-  --brand:        #423a2c;   /* primary text/icon accent  — dark warm brown  */
-  --brand-500:    #978565;   /* primary bg/border         — mid tan-brown    */
-  --brand-600:    #3f372a;   /* primary glow              — deep warm brown  */
-  --brand-hue:    0deg;      /* Imigongo SVG tint — sepia≈0°(gold), orange≈20°, blue≈190° */
+  --primary:      #3f372a;   /* deep cocoa brown */
+  --secondary:    #e0c288;   /* warm sand gold */
+  --highlight:    #d2691e;   /* copper orange */
 
-  --accent:       #e0c288;   /* secondary text/icon accent — warm amber-gold */
-  --accent-500:   #7d6549;   /* secondary bg/border        — warm mid-brown  */
-  --accent-600:   #3f372a;   /* secondary glow             — same deep brown */
-  --accent-hue:   20deg;     /* Imigongo SVG tint — slight orange-amber shift */
+  --brand:        var(--secondary); /* readable brand text/icons */
+  --brand-500:    var(--highlight); /* saturated fills and borders */
+  --brand-600:    var(--primary);   /* deep glows and CTA depth */
+  --brand-hue:    0deg;             /* Imigongo SVG tint — sepia≈0°(gold), orange≈20° */
+
+  --accent:       var(--highlight); /* copper highlights */
+  --accent-500:   var(--secondary); /* light ambient borders and glows */
+  --accent-600:   var(--primary);   /* deep gradient anchor */
+  --accent-hue:   20deg;            /* Imigongo SVG tint — copper shift */
 
   /* ── Page structure ──────────────────────────────────────────────────── */
-  --page:      #030712;
-  --panel:     #0a0f1a;
-  --well:      #0d1117;
-  --well-deep: #161b22;
+  --page:      #120f0b;
+  --panel:     #1a150f;
+  --well:      #211a12;
+  --well-deep: #2d2318;
 
-  --ink:       #f9fafb;
-  --dim:       #9ca3af;
-  --ghost:     #4b5563;
+  --ink:       #fbf6ec;
+  --dim:       #d1c0a2;
+  --ghost:     #8d7a5c;
 
-  --surface-1: rgba(255, 255, 255, 0.03);
-  --surface-2: rgba(255, 255, 255, 0.05);
-  --surface-3: rgba(255, 255, 255, 0.08);
+  --surface-1: rgba(224, 194, 136, 0.05);
+  --surface-2: rgba(224, 194, 136, 0.09);
+  --surface-3: rgba(210, 105, 30, 0.13);
 
-  --edge:      rgba(255, 255, 255, 0.07);
-  --edge-2:    rgba(255, 255, 255, 0.13);
+  --edge:      rgba(224, 194, 136, 0.12);
+  --edge-2:    rgba(224, 194, 136, 0.22);
 
-  --glass-bg:          rgba(255, 255, 255, 0.03);
-  --glass-bg-hover:    rgba(255, 255, 255, 0.06);
-  --glass-hover-ring:  rgba(139, 92, 246, 0.30);   /* follows --accent-500 */
+  --glass-bg:          rgba(224, 194, 136, 0.045);
+  --glass-bg-hover:    rgba(224, 194, 136, 0.09);
+  --glass-hover-ring:  rgba(210, 105, 30, 0.36);
 
-  --grid-line:              rgba(59, 130, 246, 0.04);
-  --scrollbar-thumb:        rgba(59, 130, 246, 0.25);
-  --scrollbar-thumb-hover:  rgba(59, 130, 246, 0.45);
+  --grid-line:              rgba(224, 194, 136, 0.055);
+  --scrollbar-thumb:        rgba(210, 105, 30, 0.36);
+  --scrollbar-thumb-hover:  rgba(224, 194, 136, 0.56);
 }
 
 /* Light theme */
 [data-theme="light"] {
-  --page:      #f8fafc;
-  --panel:     #ffffff;
-  --well:      #f1f5f9;
-  --well-deep: #e2e8f0;
+  --page:      #f6efe2;
+  --panel:     #fff9ef;
+  --well:      #ede0c9;
+  --well-deep: #dfc28a;
 
-  --ink:       #0f172a;
-  --dim:       #475569;
-  --ghost:     #94a3b8;
+  --ink:       #3f372a;
+  --dim:       #665640;
+  --ghost:     #9a825e;
 
-  --surface-1: rgba(0, 0, 0, 0.02);
-  --surface-2: rgba(0, 0, 0, 0.04);
-  --surface-3: rgba(0, 0, 0, 0.07);
+  --surface-1: rgba(63, 55, 42, 0.035);
+  --surface-2: rgba(63, 55, 42, 0.065);
+  --surface-3: rgba(210, 105, 30, 0.11);
 
-  --edge:      rgba(0, 0, 0, 0.08);
-  --edge-2:    rgba(0, 0, 0, 0.14);
+  --edge:      rgba(63, 55, 42, 0.12);
+  --edge-2:    rgba(63, 55, 42, 0.22);
 
-  --glass-bg:          rgba(255, 255, 255, 0.70);
-  --glass-bg-hover:    rgba(255, 255, 255, 0.95);
-  --glass-hover-ring:  rgba(99, 102, 241, 0.20);
+  --glass-bg:          rgba(255, 249, 239, 0.78);
+  --glass-bg-hover:    rgba(255, 249, 239, 0.98);
+  --glass-hover-ring:  rgba(210, 105, 30, 0.24);
 
-  --grid-line: rgba(59, 130, 246, 0.06);
-  --scrollbar-thumb: rgba(99, 102, 241, 0.25);
-  --scrollbar-thumb-hover: rgba(99, 102, 241, 0.45);
+  --grid-line: rgba(63, 55, 42, 0.08);
+  --scrollbar-thumb: rgba(210, 105, 30, 0.32);
+  --scrollbar-thumb-hover: rgba(63, 55, 42, 0.44);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -99,6 +105,9 @@
   --color-edge-2:    var(--edge-2);
 
   /* ── Brand aliases (semantic names) ─────────────────────────────────── */
+  --color-primary:      var(--primary);
+  --color-secondary:    var(--secondary);
+  --color-highlight:    var(--highlight);
   --color-brand:        var(--brand);
   --color-brand-500:    var(--brand-500);
   --color-brand-600:    var(--brand-600);
@@ -122,6 +131,22 @@
   --color-violet-400:  var(--accent);
   --color-violet-500:  var(--accent-500);
   --color-violet-600:  var(--accent-600);
+
+  --color-amber-400:   var(--secondary);
+  --color-amber-500:   color-mix(in oklch, var(--secondary) 70%, var(--highlight));
+  --color-amber-600:   var(--highlight);
+
+  --color-cyan-400:    color-mix(in oklch, var(--secondary) 78%, var(--highlight));
+  --color-cyan-500:    var(--highlight);
+  --color-cyan-600:    var(--primary);
+
+  --color-pink-400:    var(--accent);
+  --color-pink-500:    var(--accent-500);
+  --color-pink-600:    var(--accent-600);
+
+  --color-rose-400:    color-mix(in oklch, var(--accent) 78%, var(--secondary));
+  --color-rose-500:    var(--accent);
+  --color-rose-600:    var(--primary);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -192,7 +217,7 @@ body {
 .glass-card-hover:hover {
   background: var(--glass-bg-hover);
   border-color: var(--glass-hover-ring);
-  box-shadow: 0 0 40px rgba(99, 102, 241, 0.08);
+  box-shadow: 0 0 40px rgba(210, 105, 30, 0.12);
 }
 
 [data-theme="light"] .glass-card-hover {
@@ -200,7 +225,7 @@ body {
 }
 
 [data-theme="light"] .glass-card-hover:hover {
-  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.12), 0 1px 3px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 24px rgba(210, 105, 30, 0.14), 0 1px 3px rgba(63,55,42,0.08);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -288,6 +313,6 @@ body {
    SELECTION
 ──────────────────────────────────────────────────────────────────────────────*/
 ::selection {
-  background: rgba(59, 130, 246, 0.25);
+  background: rgba(210, 105, 30, 0.34);
   color: var(--ink);
 }
