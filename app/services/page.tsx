@@ -34,7 +34,7 @@ const services = [
     id: "design",
     title: "Product Design & UX",
     icon: PenTool,
-    color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20",
+    color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20",
     problem: "Your software is functional but confusing to use, leading to poor user adoption and high training costs.",
     solution: "We design intuitive, accessibility-first interfaces that users actually want to interact with.",
     features: ["UI/UX Design", "Wireframing & Prototyping", "Design Systems", "User Testing"],

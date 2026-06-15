@@ -63,7 +63,7 @@ export default function HeroSection() {
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 mb-8">
               {trust.map((t) => (
                 <div key={t} className="flex items-center gap-1.5 text-sm text-dim">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0" />
                   {t}
                 </div>
               ))}
@@ -82,7 +82,7 @@ export default function HeroSection() {
             animate="visible"
             className="relative"
           >
-            <div className="absolute inset-0 bg-linear-to-r from-blue-600/20 to-violet-600/20 rounded-3xl blur-3xl scale-90" />
+            <div className="absolute inset-0 bg-blue-600/20 rounded-3xl blur-3xl scale-90" />
 
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -97,8 +97,8 @@ export default function HeroSection() {
               transition={{ delay: 0.9, duration: 0.5 }}
               className="absolute -bottom-4 -left-4 glass-card rounded-2xl px-4 py-3 flex items-center gap-3 shadow-xl"
             >
-              <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+              <div className="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center">
+                <CheckCircle2 className="w-4 h-4 text-cyan-400" />
               </div>
               <div>
                 <p className="text-xs font-semibold text-ink">System live</p>
@@ -132,7 +132,7 @@ export default function HeroSection() {
           className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2"
         >
           <span className="text-xs text-ghost tracking-widest uppercase">Scroll</span>
-          <div className="w-px h-8 bg-linear-to-b from-ghost to-transparent animate-pulse" />
+          <div className="w-px h-8 bg-ghost animate-pulse" />
         </motion.div>
       </div>
     </section>

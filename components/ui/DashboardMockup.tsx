@@ -3,7 +3,7 @@
 import { TrendingUp, Users, DollarSign, Activity, BarChart2 } from "lucide-react";
 
 const stats = [
-  { label: "Total Revenue", value: "$124,590", change: "+18.2%", icon: DollarSign, color: "text-emerald-400", bg: "bg-emerald-400/10" },
+  { label: "Total Revenue", value: "$124,590", change: "+18.2%", icon: DollarSign, color: "text-cyan-400", bg: "bg-cyan-400/10" },
   { label: "Active Users",  value: "8,342",    change: "+5.4%",  icon: Users,      color: "text-blue-400",   bg: "bg-blue-400/10"   },
   { label: "Growth Rate",   value: "32.8%",    change: "+2.1%",  icon: TrendingUp, color: "text-violet-400", bg: "bg-violet-400/10" },
   { label: "Uptime",        value: "99.97%",   change: "Stable", icon: Activity,   color: "text-amber-400",  bg: "bg-amber-400/10"  },
@@ -36,7 +36,7 @@ export default function DashboardMockup() {
               </div>
             </div>
             <div className="text-base font-bold text-ink mb-0.5">{stat.value}</div>
-            <div className="text-xs text-emerald-400">{stat.change}</div>
+            <div className="text-xs text-cyan-400">{stat.change}</div>
           </div>
         ))}
       </div>
@@ -58,7 +58,7 @@ export default function DashboardMockup() {
                 style={{
                   height: `${h}%`,
                   background: i === bars.length - 1
-                    ? "linear-gradient(to top, var(--brand-500), var(--accent-500))"
+                    ? "var(--brand-500)"
                     : "color-mix(in srgb, var(--brand-500) 20%, transparent)",
                 }}
               />

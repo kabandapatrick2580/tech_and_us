@@ -84,7 +84,7 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-2.5">
               <a
-                href="mailto:hello@techandus.rw"
+                href="mailto:support@techandus.com"
                 className="inline-flex items-center gap-2 text-sm text-dim hover:text-ink transition-colors"
               >
                 <Mail className="w-4 h-4 text-blue-400" />

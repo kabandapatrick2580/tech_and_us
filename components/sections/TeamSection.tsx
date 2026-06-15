@@ -10,9 +10,9 @@ const team = [
     role: "Founder & CTO",
     bio: "Backend-focused systems architect and former CTO at Netpipo Ltd. Specialises in fintech, SaaS, and operations-heavy systems — payments, accounting integrations, and production infrastructure.",
     initials: "PK",
-    accentClass: "from-blue-500 to-violet-600",
+    accentClass: "bg-blue-500",
     ringClass: "ring-blue-500/30",
-    glowClass: "from-blue-500/8 to-violet-600/8",
+    glowClass: "bg-blue-500/8",
     labelClass: "text-blue-400",
     skills: ["React", "Python", "FastAPI", "PostgreSQL", "Docker", "QuickBooks API", "UrubutoPay API", "IremboPay API"],
     achievements: [
@@ -27,10 +27,10 @@ const team = [
     role: "UI/UX & Frontend Engineer",
     bio: "Designs interfaces people actually enjoy using. Believes great software starts with empathy — understanding the user before picking a color.",
     initials: "AU",
-    accentClass: "from-emerald-500 to-teal-600",
-    ringClass: "ring-emerald-500/30",
-    glowClass: "from-emerald-500/8 to-teal-600/8",
-    labelClass: "text-emerald-400",
+    accentClass: "bg-blue-600",
+    ringClass: "ring-cyan-500/30",
+    glowClass: "bg-cyan-500/8",
+    labelClass: "text-cyan-400",
     skills: ["React", "Figma", "Tailwind CSS", "Accessibility"],
     achievements: [] as { value: string; label: string }[],
     links: { linkedin: "#" },
@@ -40,9 +40,9 @@ const team = [
     role: "Backend & Systems Engineer",
     bio: "Builds the invisible infrastructure that keeps everything running. Obsessed with data integrity, clean APIs, and systems that hold up under real pressure.",
     initials: "JN",
-    accentClass: "from-amber-500 to-orange-600",
+    accentClass: "bg-violet-600",
     ringClass: "ring-amber-500/30",
-    glowClass: "from-amber-500/8 to-orange-600/8",
+    glowClass: "bg-amber-500/8",
     labelClass: "text-amber-400",
     skills: ["Python", "PostgreSQL", "AWS", "API Design"],
     achievements: [] as { value: string; label: string }[],
@@ -53,9 +53,9 @@ const team = [
     role: "Mobile & DevOps Engineer",
     bio: "Ships cross-platform apps and keeps deployments clean. Makes sure what works in staging also works at 2am in production — without exception.",
     initials: "GM",
-    accentClass: "from-pink-500 to-rose-600",
+    accentClass: "bg-blue-500",
     ringClass: "ring-pink-500/30",
-    glowClass: "from-pink-500/8 to-rose-600/8",
+    glowClass: "bg-pink-500/8",
     labelClass: "text-pink-400",
     skills: ["React Native", "Docker", "CI/CD", "Expo"],
     achievements: [] as { value: string; label: string }[],
@@ -91,12 +91,12 @@ function TeamCard({ member, index }: { member: (typeof team)[0]; index: number }
     >
       {/* Hover glow */}
       <div
-        className={`absolute inset-0 bg-linear-to-br ${member.glowClass} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}
+        className={`absolute inset-0 ${member.glowClass} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}
       />
 
       {/* Top accent line that grows left→right on hover */}
       <div
-        className={`absolute top-0 left-0 h-0.5 bg-linear-to-r ${member.accentClass} w-0 group-hover:w-full transition-all duration-500 ease-out`}
+        className={`absolute top-0 left-0 h-0.5 ${member.accentClass} w-0 group-hover:w-full transition-all duration-500 ease-out`}
       />
 
       <div className="relative p-6">
@@ -104,7 +104,7 @@ function TeamCard({ member, index }: { member: (typeof team)[0]; index: number }
         <div className="flex items-start justify-between mb-5">
           <div className="relative">
             <div
-              className={`w-14 h-14 rounded-2xl bg-linear-to-br ${member.accentClass} flex items-center justify-center shadow-lg`}
+              className={`w-14 h-14 rounded-2xl ${member.accentClass} flex items-center justify-center shadow-lg`}
             >
               <span className="text-base font-bold text-white tracking-wide">
                 {member.initials}

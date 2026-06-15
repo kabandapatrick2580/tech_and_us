@@ -27,7 +27,7 @@ export default function BrowserFrame({
         </div>
         <div className="flex-1 mx-3">
           <div className="bg-well border border-edge rounded-lg px-3 py-1.5 flex items-center gap-2 max-w-xs mx-auto">
-            <div className="w-3 h-3 rounded-full bg-emerald-500/60 shrink-0" />
+            <div className="w-3 h-3 rounded-full bg-cyan-500/60 shrink-0" />
             <span className="text-ghost text-xs font-mono truncate">{url}</span>
           </div>
         </div>

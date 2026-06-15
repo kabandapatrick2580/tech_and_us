@@ -22,7 +22,7 @@ const values = [
     icon: TrendingUp,
     title: "Scalable Solutions",
     description: "Grow without rebuilding everything. Our architecture evolves with your business — from startup to enterprise.",
-    color: "text-emerald-400",bg: "bg-emerald-400/10",border: "border-emerald-400/20",
+    color: "text-cyan-400",bg: "bg-cyan-400/10",border: "border-cyan-400/20",
   },
   {
     icon: Sparkles,

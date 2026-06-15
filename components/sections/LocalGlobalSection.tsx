@@ -33,7 +33,7 @@ export default function LocalGlobalSection() {
           viewport={viewportConfig}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 tracking-wide uppercase mb-4">
+          <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 tracking-wide uppercase mb-4">
             Where We Operate
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-ink leading-tight tracking-tight">
@@ -56,11 +56,11 @@ export default function LocalGlobalSection() {
         >
           <motion.div
             variants={fadeInLeft}
-            className="glass-card rounded-2xl p-8 border border-emerald-500/15 hover:border-emerald-500/30 transition-all duration-300"
+            className="glass-card rounded-2xl p-8 border border-cyan-500/15 hover:border-cyan-500/30 transition-all duration-300"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-emerald-400" />
+              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center">
+                <MapPin className="w-5 h-5 text-cyan-400" />
               </div>
               <div>
                 <h3 className="text-base font-semibold text-ink">Local Understanding</h3>
@@ -70,7 +70,7 @@ export default function LocalGlobalSection() {
             <ul className="space-y-3">
               {localPoints.map((p) => (
                 <li key={p} className="flex items-start gap-3 text-sm text-dim">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                   {p}
                 </li>
               ))}
