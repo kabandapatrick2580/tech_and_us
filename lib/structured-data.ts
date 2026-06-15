@@ -44,7 +44,11 @@ export const structuredData = {
         "API integration",
         "AI integration",
       ],
-      // sameAs: ["https://www.linkedin.com/company/..."],
+        sameAs: [
+        "https:https://www.linkedin.com/company/121954356",
+        "https://www.facebook.com/profile.php?id=61589913176462"
+      ],
+
     },
     {
       "@type": "WebSite",
