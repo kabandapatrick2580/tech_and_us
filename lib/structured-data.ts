@@ -23,9 +23,9 @@ export const structuredData = {
       url: BASE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${BASE_URL}/logo_icon.png`,
+        url: `${BASE_URL}/logo_light_mode.png`,
       },
-      image: `${BASE_URL}/logo_icon.png`,
+      image: `${BASE_URL}/logo_light_mode.png`,
       description:
         "Tech & Us builds scalable web and mobile applications, business systems, and smart solutions that help companies operate better — locally and globally.",
       email: "support@techandus.com",
@@ -44,11 +44,11 @@ export const structuredData = {
         "API integration",
         "AI integration",
       ],
-        sameAs: [
-        "https:https://www.linkedin.com/company/121954356",
-        "https://www.facebook.com/profile.php?id=61589913176462"
+      // Keep in sync with socialLinks in components/layout/Footer.tsx.
+      sameAs: [
+        "https://www.linkedin.com/company/121954356",
+        "https://www.facebook.com/profile.php?id=61589913176462",
       ],
-
     },
     {
       "@type": "WebSite",

@@ -48,15 +48,21 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-17.5">
+          <div className="flex items-center justify-between h-20 lg:h-22">
 
-            {/* Logo */}
+            {/* Logo (theme-aware: dark/gold mark on dark, color mark on light) */}
             <Link href="/" className="flex items-center gap-2.5">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo_icon.png"
+                src="/logo_dark_mode.svg"
                 alt="Tech & Us logo"
-                className="h-10 w-auto"
+                className="logo-dark h-30 w-auto"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo_light_mode.svg"
+                alt="Tech & Us logo"
+                className="logo-light h-30 w-auto"
               />
               <span className="text-ink font-semibold text-lg tracking-tight">
                 Tech<span className="text-blue-400">&</span>Us

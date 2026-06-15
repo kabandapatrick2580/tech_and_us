@@ -281,6 +281,15 @@ body {
 [data-theme="light"] .imigongo-overlay-violet { filter: sepia(1) saturate(5) hue-rotate(var(--accent-hue)) opacity(0.05); }
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   THEME-AWARE LOGO — show the variant that suits the active background.
+   Dark mode (default) shows the light/gold mark; light mode shows the dark mark.
+──────────────────────────────────────────────────────────────────────────────*/
+.logo-light { display: none; }
+.logo-dark  { display: block; }
+[data-theme="light"] .logo-light { display: block; }
+[data-theme="light"] .logo-dark  { display: none; }
+
+/* ─────────────────────────────────────────────────────────────────────────────
    PULSE SIGNALS — full-screen decorative signal lines
 ──────────────────────────────────────────────────────────────────────────────*/
 @keyframes signal-travel {

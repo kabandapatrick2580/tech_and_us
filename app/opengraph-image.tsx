@@ -11,7 +11,7 @@ export const contentType = "image/png";
 
 export default async function OpengraphImage() {
   const logoData = await readFile(
-    join(process.cwd(), "public", "logo_icon.png"),
+    join(process.cwd(), "public", "logo_dark_mode.png"),
     "base64",
   );
   const logoSrc = `data:image/png;base64,${logoData}`;
@@ -33,7 +33,7 @@ export default async function OpengraphImage() {
       >
         {/* Brand lockup */}
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <img src={logoSrc} height={84} width={84} alt="" />
+          <img src={logoSrc} height={84} width={102} alt="" />
           <div
             style={{
               display: "flex",
