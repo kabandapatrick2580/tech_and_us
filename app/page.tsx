@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Tech & Us — Technology That Moves Your Business Forward",
   description:
     "Tech & Us builds scalable web and mobile applications, business systems, and smart solutions that help companies operate better — locally and globally.",
+  alternates: { canonical: "/" },
 };
 
 export default function HomePage() {

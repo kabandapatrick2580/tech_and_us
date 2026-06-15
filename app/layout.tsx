@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { structuredData } from "@/lib/structured-data";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,13 +38,13 @@ export const metadata: Metadata = {
     title: "Tech & Us — Technology That Moves Your Business Forward",
     description:
       "Scalable web and mobile applications, business systems, and smart solutions for companies operating locally and globally.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Tech & Us" }],
+    // og:image is supplied automatically by app/opengraph-image.tsx
   },
   twitter: {
     card: "summary_large_image",
     title: "Tech & Us — Technology That Moves Your Business Forward",
     description: "Scalable web and mobile applications, business systems, and smart solutions.",
-    images: ["/og-image.png"],
+    // twitter:image falls back to the generated opengraph-image
   },
   robots: {
     index: true,
@@ -68,6 +69,10 @@ export default function RootLayout({
         client-side; this prevents the hydration mismatch warning.
       */}
       <body className="min-h-screen flex flex-col antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <ThemeProvider>
           <Navbar />
           <main className="flex-1">{children}</main>

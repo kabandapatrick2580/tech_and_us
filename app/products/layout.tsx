@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     "SaaS products", "internal tools", "Tech & Us products", 
     "Goalifai", "SyncFlow", "fintech", "data migration"
   ],
+  alternates: { canonical: "/products" },
 };
 
 export default function ProductsLayout({ children }: { children: React.ReactNode }) {

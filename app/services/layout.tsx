@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     "business automation", "custom software development", "digital systems", 
     "workflow automation", "business process digitization", "system integration"
   ],
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesLayout({ children }: { children: React.ReactNode }) {

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
     "custom software portfolio", "business automation projects", 
     "digital systems case studies", "system integration", "fintech apps"
   ],
+  alternates: { canonical: "/work" },
 };
 
 export default function WorkLayout({ children }: { children: React.ReactNode }) {
