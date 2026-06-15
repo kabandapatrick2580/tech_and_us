@@ -1,6 +1,18 @@
 @import "tailwindcss";
 
 /* ─────────────────────────────────────────────────────────────────────────────
+   SQUARE CORNERS — design rule: no rounded corners anywhere.
+   Flattens every radius (Tailwind rounded-* utilities, arbitrary values, and
+   inline border-radius) site-wide so buttons, cards, inputs, badges, etc. are
+   sharp-cornered. Applies to future markup automatically.
+──────────────────────────────────────────────────────────────────────────────*/
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
    COLOR TOKENS
    Mirror of lib/colors.ts — update both files together when changing values.
    See lib/colors.ts for full documentation of each token.
