@@ -21,8 +21,8 @@ const contactInfo = [
     label: "Location",
     value: "Kigali, Rwanda",
     link: null,
-    color: "text-emerald-400",
-    bg: "bg-emerald-400/10",
+    color: "text-cyan-400",
+    bg: "bg-cyan-400/10",
   }
   ,
   {
@@ -141,10 +141,10 @@ export default function ContactPage() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="glass-card rounded-2xl p-10 border border-emerald-500/20 text-center flex flex-col items-center gap-5"
+                  className="glass-card rounded-2xl p-10 border border-cyan-500/20 text-center flex flex-col items-center gap-5"
                 >
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center">
-                    <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+                  <div className="w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center">
+                    <CheckCircle2 className="w-8 h-8 text-cyan-400" />
                   </div>
                   <div>
                     <h2 className="text-xl font-bold text-ink mb-2">Message sent!</h2>
@@ -246,7 +246,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-linear-to-r from-blue-500 to-violet-600 text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-blue-500 text-white text-sm font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0"
                   >
                     {submitting ? (
                       <>

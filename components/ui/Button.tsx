@@ -18,7 +18,7 @@ interface ButtonProps {
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-linear-to-r from-blue-500 to-violet-600 text-white hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5",
+    "bg-highlight text-white hover:shadow-lg hover:shadow-blue-500/20 hover:-translate-y-0.5",
   secondary:
     "bg-surface-1 text-ink border border-edge-2 hover:bg-surface-2 hover:border-edge-2 hover:-translate-y-0.5",
   ghost:

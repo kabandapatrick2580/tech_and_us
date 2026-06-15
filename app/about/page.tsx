@@ -13,7 +13,7 @@ import EcgPulse from "@/components/ui/EcgPulse";
 const values = [
   { icon: Target, title: "Clarity First",        color: "text-blue-400",   bg: "bg-blue-400/10",   description: "We don't overcomplicate things. Clear requirements, clear architecture, clear communication — all the way to delivery." },
   { icon: Cpu,    title: "System Thinking",       color: "text-violet-400", bg: "bg-violet-400/10", description: "We see the full picture. Every feature we build fits into a larger system — and we design for how things interact, not just how they look alone." },
-  { icon: Users,  title: "Real Collaboration",    color: "text-emerald-400",bg: "bg-emerald-400/10",description: "You're not a ticket in our queue. You're a partner. We communicate directly, respond fast, and treat your project like it matters." },
+  { icon: Users,  title: "Real Collaboration",    color: "text-cyan-400",bg: "bg-cyan-400/10",description: "You're not a ticket in our queue. You're a partner. We communicate directly, respond fast, and treat your project like it matters." },
   { icon: Heart,  title: "Genuine Ownership",     color: "text-amber-400",  bg: "bg-amber-400/10",  description: "When something ships under our name, we stand behind it. We take accountability seriously and don't pass problems back to clients." },
 ];
 
@@ -31,7 +31,7 @@ const specialisations = [
     desc: "Payment gateway integrations, invoice workflows, webhook handling. We've worked with UrubutoPay, IremboPay, QuickBooks, and custom accounting pipelines.",
     iconColor:  "text-blue-400",
     iconBg:     "bg-blue-400/10",
-    glowClass:  "from-blue-500/8 to-blue-600/5",
+    glowClass:  "bg-blue-500/8",
     borderHover:"hover:border-blue-500/30",
   },
   {
@@ -40,17 +40,17 @@ const specialisations = [
     desc: "Admin dashboards, approval workflows, internal automation. We turn manual, error-prone processes into software that runs itself.",
     iconColor:  "text-violet-400",
     iconBg:     "bg-violet-400/10",
-    glowClass:  "from-violet-500/8 to-violet-600/5",
+    glowClass:  "bg-violet-500/8",
     borderHover:"hover:border-violet-500/30",
   },
   {
     icon: PlugZap,
     title: "API Integrations",
     desc: "Connecting your stack to third-party services — reliably. Data sync, USSD flows, webhook infrastructure, and clean API design.",
-    iconColor:  "text-emerald-400",
-    iconBg:     "bg-emerald-400/10",
-    glowClass:  "from-emerald-500/8 to-emerald-600/5",
-    borderHover:"hover:border-emerald-500/30",
+    iconColor:  "text-cyan-400",
+    iconBg:     "bg-cyan-400/10",
+    glowClass:  "bg-cyan-500/8",
+    borderHover:"hover:border-cyan-500/30",
   },
   {
     icon: Server,
@@ -58,7 +58,7 @@ const specialisations = [
     desc: "Production-hardened systems built on PostgreSQL, Docker, and Linux. We care about uptime, not just shipping — 99.9% is the standard we hold ourselves to.",
     iconColor:  "text-amber-400",
     iconBg:     "bg-amber-400/10",
-    glowClass:  "from-amber-500/8 to-amber-600/5",
+    glowClass:  "bg-amber-500/8",
     borderHover:"hover:border-amber-500/30",
   },
 ];
@@ -123,7 +123,7 @@ export default function AboutPage() {
                   className={`group relative glass-card rounded-2xl p-5 flex flex-col gap-3 border border-edge transition-colors duration-300 ${item.borderHover} overflow-hidden`}
                 >
                   {/* Per-card background glow on hover */}
-                  <div className={`absolute inset-0 bg-linear-to-br ${item.glowClass} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
+                  <div className={`absolute inset-0 ${item.glowClass} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`} />
 
                   <div className={`relative w-9 h-9 rounded-xl ${item.iconBg} flex items-center justify-center shrink-0`}>
                     <item.icon className={`w-4.5 h-4.5 ${item.iconColor}`} />

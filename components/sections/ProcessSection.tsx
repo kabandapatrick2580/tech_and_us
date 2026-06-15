@@ -50,7 +50,7 @@ export default function ProcessSection() {
 
         <div className="relative">
           {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-10 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/20 to-transparent" />
+          <div className="hidden lg:block absolute top-10 left-0 right-0 h-px bg-blue-500/20" />
 
           <motion.div
             variants={staggerContainer}
@@ -67,7 +67,7 @@ export default function ProcessSection() {
               >
                 <div className="flex items-center gap-3 mb-5">
                   <div className="relative">
-                    <div className="w-10 h-10 rounded-xl bg-linear-to-br from-blue-500/20 to-violet-500/20 border border-blue-500/20 flex items-center justify-center">
+                    <div className="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-500/20 flex items-center justify-center">
                       <step.icon className="w-5 h-5 text-blue-400" />
                     </div>
                     <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-[9px] font-bold text-blue-400">

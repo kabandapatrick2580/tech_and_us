@@ -13,7 +13,7 @@ const testimonials = [
     role: "CEO",
     company: "CSCA Ltd",
     initials: "DM",
-    accentClass: "from-blue-500 to-violet-600",
+    accentClass: "bg-blue-500",
   },
   {
     quote:
@@ -22,7 +22,7 @@ const testimonials = [
     role: "Operations Director",
     company: "Clearwater Finance",
     initials: "SC",
-    accentClass: "from-emerald-500 to-teal-600",
+    accentClass: "bg-blue-600",
   },
   {
     quote:
@@ -31,7 +31,7 @@ const testimonials = [
     role: "Founder",
     company: "Inzozi Ventures",
     initials: "OH",
-    accentClass: "from-amber-500 to-orange-600",
+    accentClass: "bg-violet-600",
   },
   {
     quote:
@@ -40,7 +40,7 @@ const testimonials = [
     role: "Co-Founder & CTO",
     company: "Stackr",
     initials: "NO",
-    accentClass: "from-pink-500 to-rose-600",
+    accentClass: "bg-blue-500",
   },
   {
     quote:
@@ -49,7 +49,7 @@ const testimonials = [
     role: "Operations Manager",
     company: "Kigali Logistics Group",
     initials: "JN",
-    accentClass: "from-violet-500 to-purple-600",
+    accentClass: "bg-blue-600",
   },
   {
     quote:
@@ -58,7 +58,7 @@ const testimonials = [
     role: "Founder",
     company: "PaysSync",
     initials: "PS",
-    accentClass: "from-cyan-500 to-blue-600",
+    accentClass: "bg-violet-600",
   },
 ];
 
@@ -74,7 +74,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[0] }) {
       </p>
       <div className="flex items-center gap-3 pt-3 border-t border-edge">
         <div
-          className={`w-9 h-9 rounded-full bg-linear-to-br ${t.accentClass} flex items-center justify-center shrink-0`}
+          className={`w-9 h-9 rounded-full ${t.accentClass} flex items-center justify-center shrink-0`}
         >
           <span className="text-[11px] font-bold text-white">{t.initials}</span>
         </div>
@@ -129,9 +129,9 @@ export default function TestimonialsSection() {
       {/* Marquee wrapper — hover on this div pauses both rows */}
       <div className="marquee-wrapper relative">
         {/* Left fade edge */}
-        <div className="absolute left-0 top-0 bottom-0 w-28 bg-linear-to-r from-page to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-28 bg-page z-10 pointer-events-none" />
         {/* Right fade edge */}
-        <div className="absolute right-0 top-0 bottom-0 w-28 bg-linear-to-l from-page to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-28 bg-page z-10 pointer-events-none" />
 
         <div className="flex flex-col gap-4">
           <MarqueeRow items={row1} direction="left" />

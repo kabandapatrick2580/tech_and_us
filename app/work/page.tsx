@@ -30,7 +30,7 @@ const currentProjects = [
           <div className="flex gap-1"><div className="w-2 h-2 rounded-full bg-[#ff5f57]" /><div className="w-2 h-2 rounded-full bg-[#febc2e]" /><div className="w-2 h-2 rounded-full bg-[#28c840]" /></div>
           <div className="flex-1 h-3 bg-surface-1 rounded-md mx-2" />
         </div>
-        <div className="bg-linear-to-br from-blue-500/10 to-surface-1 rounded-lg p-4 mb-3 border border-edge">
+        <div className="bg-blue-500/10 rounded-lg p-4 mb-3 border border-edge">
           <div className="h-2 bg-ink/20 rounded w-1/2 mb-2" />
           <div className="h-1.5 bg-surface-2 rounded w-3/4 mb-1" /><div className="h-1.5 bg-surface-2 rounded w-2/3 mb-3" />
           <div className="flex gap-2">
@@ -71,8 +71,8 @@ const currentProjects = [
         </div>
         <div className="space-y-2.5">
           {[
-            { label: "Parse source data",        pct: 100, color: "bg-emerald-400" },
-            { label: "Validate records",          pct: 100, color: "bg-emerald-400" },
+            { label: "Parse source data",        pct: 100, color: "bg-cyan-400" },
+            { label: "Validate records",          pct: 100, color: "bg-cyan-400" },
             { label: "Transform to QB format",    pct: 72,  color: "bg-amber-400"  },
             { label: "Push to QuickBooks",        pct: 0,   color: "bg-surface-2"  },
             { label: "Verify & audit log",        pct: 0,   color: "bg-surface-2"  },
@@ -80,7 +80,7 @@ const currentProjects = [
             <div key={step.label}>
               <div className="flex justify-between mb-1">
                 <span className="text-[10px] text-ghost">{step.label}</span>
-                <span className={`text-[10px] ${step.pct === 100 ? "text-emerald-400" : step.pct > 0 ? "text-amber-400" : "text-ghost"}`}>
+                <span className={`text-[10px] ${step.pct === 100 ? "text-cyan-400" : step.pct > 0 ? "text-amber-400" : "text-ghost"}`}>
                   {step.pct === 100 ? "Done" : step.pct > 0 ? `${step.pct}%` : "Waiting"}
                 </span>
               </div>
@@ -119,9 +119,9 @@ const currentProjects = [
             <div className="px-3 pb-3 space-y-2">
               <div className="text-[9px] font-semibold text-ink">My Goals</div>
               {[
-                { name: "Emergency Fund", pct: 68, color: "from-violet-500 to-violet-400" },
-                { name: "New Laptop",     pct: 45, color: "from-blue-500 to-blue-400"    },
-                { name: "Holiday Trip",   pct: 22, color: "from-emerald-500 to-emerald-400" },
+                { name: "Emergency Fund", pct: 68, color: "bg-violet-500" },
+                { name: "New Laptop",     pct: 45, color: "bg-blue-500"    },
+                { name: "Holiday Trip",   pct: 22, color: "bg-cyan-500" },
               ].map((goal) => (
                 <div key={goal.name} className="bg-surface-1 rounded-xl p-2 border border-edge">
                   <div className="flex justify-between mb-1.5">
@@ -129,11 +129,11 @@ const currentProjects = [
                     <span className="text-[8px] text-ink font-medium">{goal.pct}%</span>
                   </div>
                   <div className="h-1 bg-surface-2 rounded-full overflow-hidden">
-                    <div className={`h-full bg-linear-to-r ${goal.color} rounded-full`} style={{ width: `${goal.pct}%` }} />
+                    <div className={`h-full ${goal.color} rounded-full`} style={{ width: `${goal.pct}%` }} />
                   </div>
                 </div>
               ))}
-              <div className="h-7 bg-linear-to-r from-violet-500/80 to-violet-600/80 rounded-xl flex items-center justify-center">
+              <div className="h-7 bg-violet-600/80 rounded-xl flex items-center justify-center">
                 <span className="text-[8px] text-white font-medium">+ Add Goal</span>
               </div>
             </div>
@@ -147,7 +147,7 @@ const currentProjects = [
 /* ── Team background ──────────────────────────────────────────── */
 const teamExperience = [
   { id: "hr",   tag: "Business Systems",  title: "HR & Workforce Management",        icon: Users,         iconBg: "bg-blue-500/10",   iconColor: "text-blue-400",   tagColor: "bg-blue-500/10 text-blue-400 border-blue-500/20",   summary: "Our team has built HR platforms covering employee records, leave management, payroll calculation engines, attendance tracking, and management reporting — for organisations dealing with the real complexity of local tax rules, approval hierarchies, and org structure changes." },
-  { id: "api",  tag: "API & Integrations", title: "System Integrations",              icon: Plug,          iconBg: "bg-emerald-500/10", iconColor: "text-emerald-400",tagColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20", summary: "We've designed and built integration layers connecting CRMs, payment processors, logistics APIs, accounting platforms, and legacy databases — with proper retry logic, event queues, error handling, and observability dashboards." },
+  { id: "api",  tag: "API & Integrations", title: "System Integrations",              icon: Plug,          iconBg: "bg-cyan-500/10", iconColor: "text-cyan-400",tagColor: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20", summary: "We've designed and built integration layers connecting CRMs, payment processors, logistics APIs, accounting platforms, and legacy databases — with proper retry logic, event queues, error handling, and observability dashboards." },
   { id: "ops",  tag: "Internal Tools",    title: "Operations & Reporting Dashboards", icon: LayoutDashboard,iconBg: "bg-violet-500/10", iconColor: "text-violet-400", tagColor: "bg-violet-500/10 text-violet-400 border-violet-500/20", summary: "We've built internal tools for operations, finance, and management teams — replacing manual Excel workflows with live dashboards, configurable KPI widgets, automated reports, and role-based access." },
   { id: "ai",   tag: "AI Integration",    title: "AI-Enhanced Features",             icon: Sparkles,      iconBg: "bg-amber-500/10",  iconColor: "text-amber-400",  tagColor: "bg-amber-500/10 text-amber-400 border-amber-500/20",   summary: "Our team has worked on practical AI integrations — document extraction, smart search, automated data pipelines, and workflow automation. We treat AI as an engineering discipline: prompt design, output validation, fallback logic, and cost management all matter." },
 ];
@@ -183,7 +183,7 @@ export default function WorkPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={viewportConfig} className="flex items-center gap-4 mb-10">
             <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
               <h2 className="text-lg font-semibold text-ink">Currently Building</h2>
             </div>
             <div className="flex-1 h-px bg-edge" />

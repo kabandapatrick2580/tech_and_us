@@ -37,8 +37,8 @@ const products = [
         </div>
         <div className="space-y-3">
           {[
-            { label: "Parse source data",        pct: 100, color: "bg-emerald-400" },
-            { label: "Validate records",          pct: 100, color: "bg-emerald-400" },
+            { label: "Parse source data",        pct: 100, color: "bg-cyan-400" },
+            { label: "Validate records",          pct: 100, color: "bg-cyan-400" },
             { label: "Transform to target format",pct: 72,  color: "bg-amber-400"  },
             { label: "Push to API",               pct: 0,   color: "bg-surface-2"  },
             { label: "Verify & audit log",        pct: 0,   color: "bg-surface-2"  },
@@ -46,7 +46,7 @@ const products = [
             <div key={step.label}>
               <div className="flex justify-between mb-1.5">
                 <span className="text-xs text-ghost font-medium">{step.label}</span>
-                <span className={`text-xs font-semibold ${step.pct === 100 ? "text-emerald-400" : step.pct > 0 ? "text-amber-400" : "text-ghost"}`}>
+                <span className={`text-xs font-semibold ${step.pct === 100 ? "text-cyan-400" : step.pct > 0 ? "text-amber-400" : "text-ghost"}`}>
                   {step.pct === 100 ? "Done" : step.pct > 0 ? `${step.pct}%` : "Waiting"}
                 </span>
               </div>
@@ -90,9 +90,9 @@ const products = [
             <div className="px-4 py-4 space-y-3">
               <div className="text-xs font-bold text-ink mb-1">My Goals</div>
               {[
-                { name: "Emergency Fund", pct: 68, color: "from-violet-500 to-violet-400" },
-                { name: "New Laptop",     pct: 45, color: "from-blue-500 to-blue-400"    },
-                { name: "Holiday Trip",   pct: 22, color: "from-emerald-500 to-emerald-400" },
+                { name: "Emergency Fund", pct: 68, color: "bg-violet-500" },
+                { name: "New Laptop",     pct: 45, color: "bg-blue-500"    },
+                { name: "Holiday Trip",   pct: 22, color: "bg-cyan-500" },
               ].map((goal) => (
                 <div key={goal.name} className="bg-surface-1 rounded-xl p-3 border border-edge">
                   <div className="flex justify-between mb-2">
@@ -100,11 +100,11 @@ const products = [
                     <span className="text-[11px] text-ink font-bold">{goal.pct}%</span>
                   </div>
                   <div className="h-1.5 bg-surface-2 rounded-full overflow-hidden">
-                    <div className={`h-full bg-linear-to-r ${goal.color} rounded-full`} style={{ width: `${goal.pct}%` }} />
+                    <div className={`h-full ${goal.color} rounded-full`} style={{ width: `${goal.pct}%` }} />
                   </div>
                 </div>
               ))}
-              <div className="h-10 mt-3 bg-linear-to-r from-violet-500 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/20 cursor-pointer hover:opacity-90 transition-opacity">
+              <div className="h-10 mt-3 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/20 cursor-pointer hover:opacity-90 transition-opacity">
                 <span className="text-xs text-white font-bold tracking-wide">+ Add Goal</span>
               </div>
             </div>

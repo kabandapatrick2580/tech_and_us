@@ -186,19 +186,13 @@ body {
    UTILITY CLASSES
 ──────────────────────────────────────────────────────────────────────────────*/
 
-/* Gradient text */
+/* Brand accent text (formerly gradient — now solid brand colors) */
 .gradient-text {
-  background: linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--brand);
 }
 
 .gradient-text-blue {
-  background: linear-gradient(135deg, var(--brand-500) 0%, var(--accent-500) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--brand-500);
 }
 
 /* Grid background */

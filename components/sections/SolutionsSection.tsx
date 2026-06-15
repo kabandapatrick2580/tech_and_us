@@ -59,10 +59,10 @@ const colorMap: Record<string, {
   feature: string;
   gradient: string;
 }> = {
-  blue:    { border: "border-blue-500/20 hover:border-blue-500/40",     tag: "bg-blue-500/10 text-blue-400",     feature: "text-blue-400",    gradient: "from-blue-500/20"    },
-  violet:  { border: "border-violet-500/20 hover:border-violet-500/40", tag: "bg-violet-500/10 text-violet-400", feature: "text-violet-400",  gradient: "from-violet-500/20"  },
-  emerald: { border: "border-emerald-500/20 hover:border-emerald-500/40",tag: "bg-emerald-500/10 text-emerald-400",feature: "text-emerald-400",gradient: "from-emerald-500/20" },
-  amber:   { border: "border-amber-500/20 hover:border-amber-500/40",   tag: "bg-amber-500/10 text-amber-400",   feature: "text-amber-400",   gradient: "from-amber-500/20"   },
+  blue:    { border: "border-blue-500/20 hover:border-blue-500/40",     tag: "bg-blue-500/10 text-blue-400",     feature: "text-blue-400",    gradient: "bg-blue-500/20"    },
+  violet:  { border: "border-violet-500/20 hover:border-violet-500/40", tag: "bg-violet-500/10 text-violet-400", feature: "text-violet-400",  gradient: "bg-violet-500/20"  },
+  emerald: { border: "border-cyan-500/20 hover:border-cyan-500/40",     tag: "bg-cyan-500/10 text-cyan-400",     feature: "text-cyan-400",    gradient: "bg-cyan-500/20"    },
+  amber:   { border: "border-amber-500/20 hover:border-amber-500/40",   tag: "bg-amber-500/10 text-amber-400",   feature: "text-amber-400",   gradient: "bg-amber-500/20"   },
 };
 
 export default function SolutionsSection() {
@@ -105,7 +105,7 @@ export default function SolutionsSection() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Bottom gradient fade into card background */}
-                  <div className={`absolute inset-x-0 bottom-0 h-20 bg-linear-to-t ${c.gradient} to-transparent`} />
+                  <div className={`absolute inset-x-0 bottom-0 h-20 ${c.gradient}`} />
                   {/* Tag pill — sits on the image */}
                   <div className="absolute top-3 left-3">
                     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold backdrop-blur-sm ${c.tag}`}>

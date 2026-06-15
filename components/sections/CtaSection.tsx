@@ -19,9 +19,9 @@ export default function CtaSection() {
           initial="hidden"
           whileInView="visible"
           viewport={viewportConfig}
-          className="relative glass-card rounded-3xl p-10 lg:p-14 border border-edge bg-gradient-to-br from-blue-600/5 to-violet-600/5"
+          className="relative glass-card rounded-3xl p-10 lg:p-14 border border-edge bg-blue-600/5"
         >
-          <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-blue-500/40 to-transparent" />
+          <div className="absolute top-0 left-8 right-8 h-px bg-blue-500/40" />
 
           <motion.span
             variants={fadeInUp}
